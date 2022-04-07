@@ -1,3 +1,6 @@
+[![Node.js CI](https://github.com/schneidermichael/cloudia-ui/actions/workflows/node.yml/badge.svg)](https://github.com/schneidermichael/cloudia-ui/actions/workflows/node.yml)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/schneidermichael/cloudia-ui/branch/main/graph/badge.svg?token=AZY7ANS2F4)](https://codecov.io/gh/schneidermichael/cloudia-ui)
 # Cloudia-UI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
