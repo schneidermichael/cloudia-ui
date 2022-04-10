@@ -1,0 +1,35 @@
+<div class="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+          <div class="mt-5 md:mt-0 md:col-span-2">
+
+            <h2 class="text-2xl text-center leading-7  text-gray-900 sm:text-3xl sm:truncate">User Login</h2>
+
+            <form action="#" method="POST">
+                <div class="px-4 py-5 bg-white sm:p-6">
+                  <div class="grid grid-cols-6 gap-6">
+
+                    <div class="col-span-6 sm:col-span-6">
+                      <label for="first-name" class="block text-sm font-medium text-gray-700">Email address</label>
+                      <input type="email" name="email-address" id="email-address" autocomplete="email" class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-6">
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" name="password" id="password-address" autocomplete="new-password" class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <a routerLink="/lost-password" class="text-emerald-500">Forgot your password?</a>
+                    </div>
+      
+                  </div>
+                </div>
+                <div class="px-4 py-3 sm:px-6">
+                    <button type="submit" class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">Log in</button>
+                </div>  
+                <div class="px-4 py-3 sm:px-6">
+                    <button routerLink="/register" class="w-full h-12 px-5 text-black transition-colors duration-150 border border-emerald-500 rounded-lg focus:shadow-outline ">Don't have an account yet?</button>     
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
