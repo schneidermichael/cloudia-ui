@@ -8,8 +8,9 @@ import { RegisterComponent } from './register/register.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
 import { AuthorizedModule } from './authorized/authorized.module';
 import { UnauthorizedModule } from './unauthorized/unauthorized.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 @NgModule({
@@ -25,7 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
     AuthorizedModule,
     UnauthorizedModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientTestingModule,
+    FormsModule,
+    
 
   ],
   providers: [],
