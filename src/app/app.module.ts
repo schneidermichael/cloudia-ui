@@ -8,6 +8,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
+<<<<<<< Updated upstream
+=======
+import { AuthorizedModule } from './authorized/authorized.module';
+import { UnauthorizedModule } from './unauthorized/unauthorized.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -20,7 +28,16 @@ import { LostPasswordComponent } from './lost-password/lost-password.component';
   ],
   imports: [
     BrowserModule,
+<<<<<<< Updated upstream
     AppRoutingModule
+=======
+    AppRoutingModule,
+    AuthorizedModule,
+    UnauthorizedModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
