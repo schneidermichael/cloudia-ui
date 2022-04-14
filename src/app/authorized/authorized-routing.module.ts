@@ -4,7 +4,7 @@ import { AuthorizedComponent } from "./authorized.component";
 import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
-    {path: '', component: AuthorizedComponent, children: [
+    {path: 'authorized', component: AuthorizedComponent, children: [
         {
             path: 'home', // child route path
             component: HomeComponent, // child route component that the router renders
