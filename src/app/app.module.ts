@@ -11,6 +11,8 @@ import { UnauthorizedModule } from './unauthorized/unauthorized.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ResendRegistrationComponent } from './resend-registration/resend-registration.component';
+import { RegisterSuccessComponent } from './register-success/register-success.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    LostPasswordComponent
+    LostPasswordComponent,
+    ResendRegistrationComponent,
+    RegisterSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +33,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     HttpClientModule,
     HttpClientTestingModule,
     FormsModule,
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]
