@@ -10,7 +10,6 @@ import { AuthorizedModule } from './authorized/authorized.module';
 import { UnauthorizedModule } from './unauthorized/unauthorized.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ResendRegistrationComponent } from './resend-registration/resend-registration.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 
@@ -31,7 +30,6 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
     UnauthorizedModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientTestingModule,
     FormsModule,
   ],
   providers: [],
