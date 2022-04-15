@@ -13,28 +13,27 @@ export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
     private router: Router) {
 
-      this.loginForm = this.fb.group({
-        email: ['', Validators.required],
-        password: ['', Validators.required]
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
   login() {
 
-    const val = this.loginForm.value;
+    const formValue = this.loginForm.value;
 
-    if (val.email && val.password) {
-        this.authenticationService.login(val.email, val.password)
-            .subscribe(
-                () => {
-                    console.log("User is logged in");
-                    this.router.navigateByUrl('home');
-                }
-            );
+    if (formValue.email && formValue.password) {
+      this.authenticationService.login(formValue.email, formValue.password)
+        .subscribe(
+          () => {
+            this.router.navigateByUrl('authorized/home');
+          }
+        );
     }
   }
 }
