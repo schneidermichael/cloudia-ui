@@ -21,7 +21,7 @@ export class AuthenticationService {
     return this.http.post<User>(`${environment.apiBaseUrl}/auth/signin`, body, {headers});
   }
 
-  register(firstName : string, lastName : string, email : string, password : string, national : string) {
+  register(_firstName : string, _lastName : string, email : string, password : string, _national : string) {
     const body = new HttpParams()
     .set(`eMail`, email)
     .set(`pwd`, password);
@@ -29,13 +29,13 @@ export class AuthenticationService {
     return this.http.post<User>(`${environment.apiBaseUrl}/auth/register`, body, {headers});
   }
 
-  lostPassword(email : string){
+  lostPassword(_email : string){
 
     //TODO im Backend noch nicht implementiert
     return ;
   }
 
-  resendRegistration(email : string){
+  resendRegistration(_email : string){
 
     //TODO im Backend noch nicht implementiert
     return ;

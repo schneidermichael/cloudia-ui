@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../shared/service/authentication.service';
 
 @Component({
   selector: 'app-resend-registration',
-  templateUrl: './resend-registration.component.html',
-  styleUrls: ['./resend-registration.component.css']
+  templateUrl: './resend-registration.component.html'
 })
 export class ResendRegistrationComponent {
 
