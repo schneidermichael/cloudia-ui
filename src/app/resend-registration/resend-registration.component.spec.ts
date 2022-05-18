@@ -26,4 +26,11 @@ describe('ResendRegistrationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set instance correctly', () => {
+    expect(component).not.toBeNull();
+  });
+
+
+
 });
