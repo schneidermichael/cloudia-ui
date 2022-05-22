@@ -1,11 +1,11 @@
-FROM node:14-alpine AS build
+FROM node:16-alpine AS build
 
 LABEL maintainer="michael.schneider@stud.fh-campuswien.ac.at"
 
 WORKDIR /app
 
 COPY . .
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 # nginx server
 FROM nginx:alpine
