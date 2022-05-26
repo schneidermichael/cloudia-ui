@@ -2,6 +2,7 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/schneidermichael/cloudia-ui/branch/main/graph/badge.svg?token=AZY7ANS2F4)](https://codecov.io/gh/schneidermichael/cloudia-ui)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=schneidermichael_cloudia-ui&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=schneidermichael_cloudia-ui)
+[![Cloudia UI](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/7vjejq&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/7vjejq/runs)
 
 # Cloudia-UI
 
