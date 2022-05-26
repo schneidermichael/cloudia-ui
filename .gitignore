@@ -43,7 +43,3 @@ Thumbs.db
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/tasks.json
-
-# Cypress
-cypress/integration/1-getting-started
-cypress/integration/2-advanced-examples
