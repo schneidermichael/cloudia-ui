@@ -2,6 +2,7 @@
   "name": "cloudia-ui",
   "version": "0.0.1",
   "license": "MIT License",
+  "author": "Michael Schneider",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

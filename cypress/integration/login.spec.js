@@ -10,7 +10,7 @@ describe('The Login Page', () => {
       form: true, // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers
       body: {
         eMail: 'test.user@login.at',
-        pwd: 'password123',
+        pwd: Cypress.env('password'),
       },
     })
 
