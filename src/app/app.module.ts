@@ -12,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ResendRegistrationComponent } from './resend-registration/resend-registration.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
-
+import {NavbarComponent} from "./navbar/navbar.component";
+import {FooterComponent} from "./footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
     RegisterComponent,
     LostPasswordComponent,
     ResendRegistrationComponent,
-    RegisterSuccessComponent
+    RegisterSuccessComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
