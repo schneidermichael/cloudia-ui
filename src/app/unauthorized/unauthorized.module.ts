@@ -4,26 +4,25 @@ import { FeaturesComponent } from './features/features.component';
 import { BusinessComponent } from './business/business.component';
 import { CompanyComponent } from './company/company.component';
 import { HelpComponent } from './help/help.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
 import { UnauthorizedRoutingModule } from './unauthorized-routing.module';
 import { UnauthorizedComponent } from './unauthorized.component';
+import {AppModule} from "../app.module";
 
 
 
 @NgModule({
   declarations: [
     UnauthorizedComponent,
-    NavbarComponent,
-    FooterComponent,
     FeaturesComponent,
     BusinessComponent,
     CompanyComponent,
     HelpComponent,
-    ],
+  ],
+
   imports: [
     CommonModule,
-    UnauthorizedRoutingModule
+    UnauthorizedRoutingModule,
+    AppModule,
   ]
 })
 export class UnauthorizedModule { }
