@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
-import { AuthorizedModule } from './authorized/authorized.module';
-import { UnauthorizedModule } from './unauthorized/unauthorized.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ResendRegistrationComponent } from './resend-registration/resend-registration.component';
@@ -24,18 +23,20 @@ import {FooterComponent} from "./footer/footer.component";
     ResendRegistrationComponent,
     RegisterSuccessComponent,
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthorizedModule,
-    UnauthorizedModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
   ],
   providers: [],
+  exports: [
+    NavbarComponent,
+    FooterComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
