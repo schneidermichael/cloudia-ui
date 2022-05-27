@@ -25,9 +25,9 @@ describe('The Login Page', () => {
 
     cy.get('input[name=password]').type('password123')
 
-    cy.get('button').contains('Log in').click()
+    cy.get('button').contains('Log on').click()
 
-    cy.url().should('include', '/authorized/home')
+    cy.url().should('include', '/home')
 
   })
 })

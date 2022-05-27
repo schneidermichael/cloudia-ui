@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthenticationService} from "../shared/service/authentication.service";
+import {AuthenticationService} from "../../shared/service/authentication.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent {
 
+
   constructor(public authenticationService: AuthenticationService, private router: Router) {
   }
 
@@ -15,4 +16,5 @@ export class NavbarComponent {
     this.authenticationService.logout();
     this.router.navigateByUrl('/');
   }
+
 }

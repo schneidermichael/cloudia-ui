@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../shared/service/authentication.service';
+import { AuthenticationService } from '../../shared/service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +30,7 @@ export class LoginComponent {
       this.authenticationService.login(formValue.email, formValue.password)
         .subscribe( (response: any) => {
           this.authenticationService.setToken(response['access_token']);
-          this.router.navigateByUrl('authorized/home');
+          this.router.navigateByUrl('home');
         });
     }
   }
