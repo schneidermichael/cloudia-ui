@@ -39,11 +39,12 @@
         </div>
         <div class="hidden sm:block sm:ml-6">
 
-          <div class="ml-3 relative" *ngIf="this.authenticationService.isLoggedIn">
-            <a routerLink="/authorized/home"
+          <div class="flex space-x-4" *ngIf="this.authenticationService.isLoggedIn">
+            <a routerLink="/home"
                class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
 
-
+            <a routerLink="/profile"
+               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
           </div>
 
           <div class="flex space-x-4" *ngIf="!this.authenticationService.isLoggedIn">
@@ -76,15 +77,9 @@
         </div>
 
         <div class="ml-3 relative" *ngIf="this.authenticationService.isLoggedIn">
-          <button (click)="logout()" class="border-emerald-500  text-black px-3 py-2 transition-colors duration-150 border rounded-md text-sm font-medium">Log out
+          <button (click)="logout()" class="border-red-600 text-black px-3 py-2 transition-colors duration-150 border rounded-md text-sm font-medium">Log out
           </button>
         </div>
-
-        <div class="ml-3 relative" *ngIf="this.authenticationService.isLoggedIn">
-          <a routerLink="/authorized/profile"
-             class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
-        </div>
-
 
       </div>
     </div>

@@ -8,11 +8,21 @@ import { RegisterComponent } from './unauthorized/register/register.component';
 import { LostPasswordComponent } from './unauthorized/lost-password/lost-password.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ResendRegistrationComponent } from './unauthorized/resend-registration/resend-registration.component';
 import { RegisterSuccessComponent } from './unauthorized/register-success/register-success.component';
 import {NavbarComponent} from "./unauthorized/navbar/navbar.component";
 import {FooterComponent} from "./unauthorized/footer/footer.component";
+import {BusinessComponent} from "./unauthorized/business/business.component";
+import {CompanyComponent} from "./unauthorized/company/company.component";
+import {FeaturesComponent} from "./unauthorized/features/features.component";
+import {HelpComponent} from "./unauthorized/help/help.component";
+import {HomeComponent} from "./authorized/home/home.component";
+import {ProfileComponent} from "./authorized/profile/profile.component";
+import { PageNotFoundComponent } from './unauthorized/page-not-found/page-not-found.component';
+import {AuthenticationInterceptor} from "./shared/interceptor/authentication.interceptor";
+import {AuthenticationService} from "./shared/service/authentication.service";
+import {ProfileService} from "./shared/service/profile.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +33,14 @@ import {FooterComponent} from "./unauthorized/footer/footer.component";
     ResendRegistrationComponent,
     RegisterSuccessComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    BusinessComponent,
+    CompanyComponent,
+    FeaturesComponent,
+    HelpComponent,
+    HomeComponent,
+    ProfileComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +49,11 @@ import {FooterComponent} from "./unauthorized/footer/footer.component";
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    ProfileService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
