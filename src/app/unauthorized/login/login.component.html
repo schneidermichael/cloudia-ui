@@ -8,16 +8,25 @@
       <div class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
 
-          <div class="col-span-6 sm:col-span-6">
-            <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
-            <input type="email" name="email" id="email" autocomplete="email" formControlName="email"
-              class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          <div class="relative col-span-6 sm:col-span-6">
+            <input type="email" id="email" name ="email" autocomplete="email" formControlName="email"
+                   class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-gray-800 appearance-none text-white border-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-0 focus:border-emerald-600 peer"
+                   placeholder=" "/>
+            <label for="email"
+                   class="absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-emerald-600 peer-focus:text-emerald-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Email
+              address</label>
           </div>
 
-          <div class="col-span-6 sm:col-span-6">
-            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-            <input type="password" name="password" id="password" autocomplete="new-password" formControlName="password"
-              class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          <div class="relative col-span-6 sm:col-span-6">
+
+            <input type="password" id="password" name ="password" autocomplete="new-password" formControlName="password"
+                   class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-white border-gray-600 focus:border-emerald-500 focus:outline-none focus:ring-0 focus:border-emerald-600 peer"
+                   placeholder=" "/>
+            <label for="password"
+                   class="absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-emerald-600 peer-focus:text-emerald-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Password</label>
+          </div>
+
+          <div class="relative col-span-6 sm:col-span-6 bottom-6">
             <a routerLink="/lost-password" class="text-emerald-500">Forgot your password?</a>
           </div>
 
@@ -25,13 +34,17 @@
       </div>
       <div class="px-4 py-3 sm:px-6">
         <button (click)="login()"
-          class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">Log
-          on</button>
+                class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+          Log
+          on
+        </button>
       </div>
       <div class="px-4 py-3 sm:px-6">
         <button routerLink="/register"
-          class="w-full h-12 px-5 text-black transition-colors duration-150 border border-emerald-500 rounded-lg focus:shadow-outline ">Don't
-          have an account yet?</button>
+                class="w-full h-12 px-5 text-black transition-colors duration-150 border border-emerald-500 rounded-lg focus:shadow-outline ">
+          Don't
+          have an account yet?
+        </button>
       </div>
 
     </form>

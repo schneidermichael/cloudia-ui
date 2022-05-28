@@ -14,7 +14,7 @@ export class NavbarComponent {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -12,6 +12,7 @@ import {BusinessComponent} from "./unauthorized/business/business.component";
 import {FeaturesComponent} from "./unauthorized/features/features.component";
 import {HelpComponent} from "./unauthorized/help/help.component";
 import {CompanyComponent} from "./unauthorized/company/company.component";
+import {PageNotFoundComponent} from "./unauthorized/page-not-found/page-not-found.component";
 
 const routes: Routes = [
 
@@ -36,6 +37,7 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthenticationGuard]
   },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
