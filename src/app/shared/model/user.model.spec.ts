@@ -3,11 +3,17 @@ import { environment } from "../../../environments/environment";
 
 describe('User class tests', () => {
     let user: User;
+    let id : number = 1;
+    let createdAt : Date = new Date();
+    let updatedAt : Date = new Date();
+    let title : string = 'BSc';
+    let firstName : string = 'Max';
+    let lastName : string = 'Mustermann';
     let email: string = 'max.mustermann@email.com';
     let password: string = environment.password;
 
     beforeEach(() => {
-        user = new User(email, password);
+        user = new User(id, createdAt, updatedAt, title, firstName, lastName, email, password);
     });
 
     it('should have a valid constuctor', () => {

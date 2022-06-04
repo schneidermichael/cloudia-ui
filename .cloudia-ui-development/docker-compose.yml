@@ -12,7 +12,7 @@ services:
       ADMIN_MAIL: 'admin@admin.de'
       ADMIN_PWD: 'top_secret'
     depends_on:
-      - database
+      - cloudiadatabase
   cloudiadatabase:
     image: 'michaelxschneider/cloudia-database:latest'
     container_name: cloudia-database
