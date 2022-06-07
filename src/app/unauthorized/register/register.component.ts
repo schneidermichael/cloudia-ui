@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthenticationService } from '../../shared/service/authentication.service';
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../../shared/service/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -33,13 +33,7 @@ export class RegisterComponent {
 
     if (formValue.firstName && formValue.lastName && formValue.email && formValue.password && formValue.national) {
       this.authenticationService.register(formValue.firstName, formValue.lastName, formValue.email, formValue.password, formValue.national)
-        .subscribe(
-          {
-            next: (v) => console.log(v),
-            error: (e) => console.error(e),
-            complete: () => this.router.navigateByUrl('success')
-          }
-        );
+        .subscribe(value => this.router.navigateByUrl('success'));
     }
   }
 

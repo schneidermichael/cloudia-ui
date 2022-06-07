@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { LostPasswordComponent } from './lost-password.component';
+import {HelpComponent} from "../help/help.component";
+import {RegisterSuccessComponent} from "../register-success/register-success.component";
 
 describe('LostPasswordComponent', () => {
   let component: LostPasswordComponent;
@@ -11,7 +13,9 @@ describe('LostPasswordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule],
+      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'success', component: RegisterSuccessComponent}
+      ])],
       declarations: [ LostPasswordComponent ]
     })
     .compileComponents();
@@ -25,5 +29,10 @@ describe('LostPasswordComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should login', () => {
+    component.lostPassword();
+    expect().nothing();
   });
 });

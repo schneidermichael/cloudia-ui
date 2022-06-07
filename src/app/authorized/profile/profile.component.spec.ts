@@ -3,6 +3,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProfileComponent } from './profile.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {RouterTestingModule} from "@angular/router/testing";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HelpComponent} from "../../unauthorized/help/help.component";
+import {of} from "rxjs";
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -10,7 +13,9 @@ describe('ProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [ HttpClientTestingModule, RouterTestingModule],
+      imports : [ HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'help', component: HelpComponent}
+      ]), ReactiveFormsModule, FormsModule],
       declarations: [ ProfileComponent ]
     })
     .compileComponents();
@@ -25,4 +30,10 @@ describe('ProfileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should delete', () => {
+    component.delete();
+    expect().nothing();
+  });
+
 });
