@@ -9,6 +9,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "db:clean": "docker exec $(docker ps | grep cloudia-database | awk '{print $1}') psql -U postgres -d cloudia-db -c 'DELETE FROM \"Users\"; DELETE FROM \"AwsSimple\";'",
