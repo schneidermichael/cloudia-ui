@@ -26,4 +26,9 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should register', () => {
+    component.register();
+    expect().nothing();
+  });
 });

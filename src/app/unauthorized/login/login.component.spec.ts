@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 
 import { LoginComponent } from './login.component';
+import {HomeComponent} from "../../authorized/home/home.component";
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -12,7 +13,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule],
+      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'home', component: HomeComponent}
+      ])],
       declarations: [ LoginComponent ],
     })
     .compileComponents();
@@ -26,5 +29,10 @@ describe('LoginComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should login', () => {
+    component.login();
+    expect().nothing();
   });
 });

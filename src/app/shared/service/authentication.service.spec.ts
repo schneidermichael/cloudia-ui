@@ -17,4 +17,35 @@ describe('AuthenticationService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should login', () => {
+    service.login("","");
+    expect().nothing();
+  });
+
+  it('should setToken', () => {
+    service.setToken("");
+    expect().nothing();
+  });
+
+  it('should getToken', () => {
+    service.getToken();
+    expect().nothing();
+  });
+
+  it('should register', () => {
+    service.register("","","","","");
+    expect().nothing();
+  });
+
+  it('should lostPassword', () => {
+    service.lostPassword("");
+    expect().nothing();
+  });
+
+  it('should lostPassword', () => {
+    service.resendRegistration("");
+    expect().nothing();
+  });
+
 });

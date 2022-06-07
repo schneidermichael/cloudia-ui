@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { ResendRegistrationComponent } from './resend-registration.component';
+import {LoginComponent} from "../login/login.component";
+import {RegisterSuccessComponent} from "../register-success/register-success.component";
 
 describe('ResendRegistrationComponent', () => {
   let component: ResendRegistrationComponent;
@@ -11,7 +13,9 @@ describe('ResendRegistrationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule],
+      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'success', component: RegisterSuccessComponent}
+      ])],
       declarations: [ ResendRegistrationComponent ]
     })
     .compileComponents();
@@ -31,6 +35,9 @@ describe('ResendRegistrationComponent', () => {
     expect(component).not.toBeNull();
   });
 
-
+  it('should resendRegistration', () => {
+    component.resendRegistration();
+    expect().nothing();
+  });
 
 });
