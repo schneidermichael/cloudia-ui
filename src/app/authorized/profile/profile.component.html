@@ -17,7 +17,7 @@
                 <div class="col-span-6 sm:col-span-1">
                   <label for="user-id" class="block text-sm font-medium text-gray-700">ID</label>
                   <input type="text" name="user-id" id="user-id"
-                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="id" disabled>
+                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="user.id" disabled>
                 </div>
 
                 <div class="col-span-6 sm:col-span-5">
@@ -25,37 +25,37 @@
                 <div class="col-span-6 sm:col-span-3">
                   <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
                   <input  type="text" name="first-name" id="first-name"
-                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="firstName">
+                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="user.firstName">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                   <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
                   <input  type="text" name="last-name" id="last-name"
-                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="lastName">
+                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="user.lastName">
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
                   <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
                   <input type="text" name="email-address" id="email-address"
-                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"  [(ngModel)]="email">
+                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"  [(ngModel)]="user.email">
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
                   <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                   <input  type="text" name="password" id="password"
-                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="password">
+                         class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" [(ngModel)]="user.password">
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                   <label for="created-at" class="block text-sm font-medium text-gray-700">Created at</label>
-                  <input value= "{{createdAt | date:'medium'}}" type="text" name="created-at" id="created-at"
+                  <input value= "{{user.createdAt | date:'medium'}}" type="text" name="created-at" id="created-at"
                          class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                          disabled>
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                   <label for="updated-at" class="block text-sm font-medium text-gray-700">Updated at</label>
-                  <input value= "{{updatedAt | date:'medium'}}" type="text" name="updated-at" id="updated-at"
+                  <input value= "{{user.updatedAt | date:'medium'}}" type="text" name="updated-at" id="updated-at"
                          class="mt-1 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                          disabled>
                 </div>

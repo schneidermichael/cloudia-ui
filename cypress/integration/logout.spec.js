@@ -1,4 +1,4 @@
-describe('Authorized Sites', () => {
+describe('Logout User', () => {
 
   beforeEach(() => {
       // reset the database prior to every test
@@ -32,13 +32,11 @@ describe('Authorized Sites', () => {
       window.sessionStorage.setItem('access_token', body.access_token)
     })
 
-    cy.visit('/home')
+    cy.visit('/')
 
-    cy.url().should('include', '/home')
+    cy.get('button').contains('Log out').click()
 
-    cy.visit('/profile')
-
-    cy.url().should('include', '/profile')
+    cy.url().should('include', '/login')
 
   })
 

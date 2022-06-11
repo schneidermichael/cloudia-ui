@@ -33,7 +33,7 @@ export class RegisterComponent {
 
     if (formValue.firstName && formValue.lastName && formValue.email && formValue.password && formValue.national) {
       this.authenticationService.register(formValue.firstName, formValue.lastName, formValue.email, formValue.password, formValue.national)
-        .subscribe(value => this.router.navigateByUrl('success'));
+        .subscribe(() => this.router.navigateByUrl('success'));
     }
   }
 

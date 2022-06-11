@@ -20,26 +20,25 @@ export class AuthenticationService {
       .set(`pwd`, password);
 
     return this.http.post<any>(`${environment.apiBaseUrl}/auth/signin`, body, {headers});
-
   }
 
   setToken(response: any) {
-    localStorage.setItem('access_token', response);
+    sessionStorage.setItem('access_token', response);
   }
 
   getToken() {
-    return localStorage.getItem('access_token');
+    return sessionStorage.getItem('access_token');
   }
 
   logout() {
-    let removeToken = localStorage.removeItem('access_token');
+    let removeToken = sessionStorage.removeItem('access_token');
     if (removeToken == null) {
       this.router.navigate(['/']);
     }
   }
 
   get isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('access_token');
+    let authToken = sessionStorage.getItem('access_token');
     return authToken !== null;
   }
 
@@ -62,6 +61,4 @@ export class AuthenticationService {
     //TODO im Backend noch nicht implementiert
     return;
   }
-
-
 }

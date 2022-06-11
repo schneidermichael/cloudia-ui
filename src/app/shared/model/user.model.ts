@@ -20,7 +20,6 @@ export class User {
     this._password = password;
   }
 
-
   get id(): number {
     return this._id;
   }

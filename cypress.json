@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:4200",
   "video": false,
-  "projectId": "7vjejq"
+  "projectId": "7vjejq",
+  "experimentalSessionAndOrigin": true
 }
