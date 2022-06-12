@@ -45,6 +45,8 @@ export class AuthenticationService {
 
   register(_firstName: string, _lastName: string, email: string, password: string, _national: string) {
     const body = new HttpParams()
+      .set(`firstName`, _firstName)
+      .set(`lastName`, _lastName)
       .set(`eMail`, email)
       .set(`pwd`, password);
 
