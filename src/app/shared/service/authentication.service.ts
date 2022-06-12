@@ -50,6 +50,10 @@ export class AuthenticationService {
     return this.http.post<User>(`${environment.apiBaseUrl}/auth/register`, body, {headers});
   }
 
+  confirm(_token:string){
+    return this.http.get<any>(`${environment.apiBaseUrl}/auth/confirm?token=`+_token, {headers});
+  }
+
   lostPassword(_email: string) {
 
     //TODO im Backend noch nicht implementiert
