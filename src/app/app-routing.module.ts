@@ -16,7 +16,7 @@ import {PageNotFoundComponent} from "./unauthorized/page-not-found/page-not-foun
 
 const routes: Routes = [
 
-  {path: 'business', component: BusinessComponent},
+  {path: '', component: BusinessComponent},
   {path: 'features', component: FeaturesComponent},
   {path: 'help', component: HelpComponent},
   {path: 'company', component: CompanyComponent},
