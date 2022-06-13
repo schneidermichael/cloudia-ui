@@ -7,8 +7,8 @@ describe('Check routes of the application', () => {
     cy.url().should('include', '/features')
   })
   it('Visit the Business Page', () => {
-    cy.visit('/business')
-    cy.url().should('include', '/business')
+    cy.visit('/')
+    cy.url().should('include', '/')
   })
   it('Visit the Company Page', () => {
     cy.visit('/company')
