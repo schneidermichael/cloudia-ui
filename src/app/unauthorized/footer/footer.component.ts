@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './footer.component.html'})
 export class FooterComponent {
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() {
+    // This is intentional
+  }
 
 }

@@ -5,7 +5,6 @@ import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {RouterTestingModule} from "@angular/router/testing";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HelpComponent} from "../../unauthorized/help/help.component";
-import {of} from "rxjs";
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;

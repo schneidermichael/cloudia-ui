@@ -30,8 +30,7 @@ export class ResendRegistrationComponent {
       // this.authenticationService.resendRegistration(formValue.email)
       //   .subscribe(
       //     {
-      //       //next: (v) => console.log(v),
-      //       //error: (e) => console.error(e),
+
       //       complete: () => this.router.navigateByUrl('success')
       //     }
       //   );

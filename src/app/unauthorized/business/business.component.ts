@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
 })
 export class BusinessComponent {
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() {
+    // This is intentional
+     }
 
 
 }

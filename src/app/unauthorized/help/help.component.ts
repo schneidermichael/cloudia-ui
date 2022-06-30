@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
 })
 export class HelpComponent  {
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() {
+    // This is intentional
+  }
 
 }

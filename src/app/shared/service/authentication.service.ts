@@ -58,13 +58,11 @@ export class AuthenticationService {
 
   lostPassword(_email: string) {
 
-    //TODO im Backend noch nicht implementiert
     return;
   }
 
   resendRegistration(_email: string) {
 
-    //TODO im Backend noch nicht implementiert
     return;
   }
 }

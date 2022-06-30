@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
 })
 export class PageNotFoundComponent {
 
-  constructor() { /* TODO document why this constructor is empty */ }
+  constructor() {
+    // This is intentional
+  }
 
 }

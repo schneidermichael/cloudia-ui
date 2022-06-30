@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './features.component.html'})
 export class FeaturesComponent   {
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() { // This is intentional
+     }
 
 }
