@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8807123478110543644" datatype="html">
+        <source>Cloudia</source>
+        <target>Cloudia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <target>Startseite</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <target>Profil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6599364831830861985" datatype="html">
+        <source>Features</source>
+        <target>Funktionalität</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4607581465689784056" datatype="html">
+        <source>Business</source>
+        <target>Geschäft</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1826215573205981970" datatype="html">
+        <source>Company</source>
+        <target>Firma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7911416166208830577" datatype="html">
+        <source>Help</source>
+        <source>Hilfe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6672002779567713633" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button routerLink=&quot;/login&quot; class=&quot;bg-gray-100 text-black px-3 py-2 rounded-md text-sm font-medium&quot;&gt;"/>Log in <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button routerLink=&quot;/login&quot; class=&quot;bg-gray-100 text-black px-3 py-2 rounded-md text-sm font-medium&quot;&gt;"/>Anmelden <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4150179175468313380" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button routerLink=&quot;/register&quot; class=&quot;bg-[#27d17f] px-3 py-2 text-white rounded-md text-sm font-medium&quot;&gt;"/> Sign-up <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button routerLink=&quot;/register&quot; class=&quot;bg-[#27d17f] px-3 py-2 text-white rounded-md text-sm font-medium&quot;&gt;"/> Registrieren <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">74,76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="514736660003069788" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button (click)=&quot;logout()&quot; class=&quot;border-red-600 text-black px-3 py-2 transition-colors duration-150 border rounded-md text-sm font-medium&quot;&gt;"/>Log out <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></source>
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button (click)=&quot;logout()&quot; class=&quot;border-red-600 text-black px-3 py-2 transition-colors duration-150 border rounded-md text-sm font-medium&quot;&gt;"/>Abmelden <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unauthorized/navbar/navbar.component.html</context>
+          <context context-type="linenumber">80,81</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

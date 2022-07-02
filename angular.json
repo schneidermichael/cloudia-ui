@@ -4,6 +4,18 @@
   "newProjectRoot": "projects",
   "projects": {
     "angular-cloudia-frontend": {
+      "i18n": {
+        "sourceLocale": {
+          "code": "en",
+          "baseHref": "/"
+        },
+        "locales": {
+          "de-AT": {
+            "translation": "src/locale/messages.at.xlf",
+            "baseHref": "/at/"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,6 +29,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize":["en"],
             "outputPath": "dist/angular-cloudia-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,7 +46,6 @@
           },
           "configurations": {
             "production": {
-              
               "budgets": [
                 {
                   "type": "initial",

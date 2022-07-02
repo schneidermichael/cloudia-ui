@@ -26,4 +26,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Docker
 
-Run `npm run docker:build` to create a image. To create a container use `docker run -p 8093:80 -d --name angular-cloudia-frontend angular-cloudia-frontend`. To start or stop the container manually we can use these commands: `docker start angular-cloudia-frontend` and `docker stop angular-cloudia-frontend`.
+Run `npm run docker:build` to create a image. To create a container use `docker run -p 8093:80 -d --name cloudia-ui cloudia-ui:latest`. To start or stop the container manually we can use these commands: `docker start cloudia-ui` and `docker stop cloudia-ui`.

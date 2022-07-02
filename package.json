@@ -7,15 +7,14 @@
     "ng": "ng",
     "start": "ng serve",
     "start:https": "ng serve --ssl --ssl-key ssl/localhost.key --ssl-cert ssl/localhost.crt",
-    "build": "ng build",
+    "build": "ng build --localize",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-
     "test:coverage": "ng test --code-coverage",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "db:clean": "docker exec $(docker ps | grep cloudia-database | awk '{print $1}') psql -U postgres -d cloudia-db -c 'DELETE FROM \"Users\"; DELETE FROM \"AwsSimple\";'",
-    "docker:build": "npm install & ng build && docker build -t cloudia-ui:latest ."
+    "docker:build": "npm install & ng build --localize && docker build -t cloudia-ui:latest ."
   },
   "private": true,
   "dependencies": {
@@ -35,10 +34,10 @@
     "@angular-devkit/build-angular": "^14.0.0",
     "@angular/cli": "^14.0.0",
     "@angular/compiler-cli": "^14.0.0",
+    "@angular/localize": "^14.0.0",
     "@tailwindcss/forms": "^0.5.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
-    "autoprefixer": "10.4.5",
     "cypress": "^9.7.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
