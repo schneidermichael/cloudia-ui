@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VirtualMachineComponent } from './virtual-machine.component';
+import { GcpVmCalculateComponent } from './gcp-vm-calculate.component';
 
-describe('VirtualMachineComponent', () => {
-  let component: VirtualMachineComponent;
-  let fixture: ComponentFixture<VirtualMachineComponent>;
+describe('GcpVmCalculateComponent', () => {
+  let component: GcpVmCalculateComponent;
+  let fixture: ComponentFixture<GcpVmCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VirtualMachineComponent ]
+      declarations: [ GcpVmCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VirtualMachineComponent);
+    fixture = TestBed.createComponent(GcpVmCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

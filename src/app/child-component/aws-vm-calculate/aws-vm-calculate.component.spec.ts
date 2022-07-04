@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComputeEngineComponent } from './compute-engine.component';
+import { AwsVmCalculateComponent } from './aws-vm-calculate.component';
 
-describe('ComputeEngineComponent', () => {
-  let component: ComputeEngineComponent;
-  let fixture: ComponentFixture<ComputeEngineComponent>;
+describe('AwsVmCalculateComponent', () => {
+  let component: AwsVmCalculateComponent;
+  let fixture: ComponentFixture<AwsVmCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComputeEngineComponent ]
+      declarations: [ AwsVmCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ComputeEngineComponent);
+    fixture = TestBed.createComponent(AwsVmCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,43 @@
+<div>
+  <form>
+    <div class="shadow overflow-hidden sm:rounded-md">
+      <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-1">
+          <h3 class="text-2xl">Azure</h3>
+        </div>
+        <div class="grid grid-cols-1">
+          <h3 class="text-xl text-gray-400">Virtual Machine</h3>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="azure-region" class="block text-sm font-medium text-gray-700">Region</label>
+          <select id="azure-region" name="azure-region"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let region of regions">{{region.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="azure-image" class="block text-sm font-medium text-gray-700">Image</label>
+          <select id="azure-image" name="azure-image"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let region of regions">{{region.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="azure-size" class="block text-sm font-medium text-gray-700">Size</label>
+          <select id="azure-size" name="azure-size"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let region of regions">{{region.name}}</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 pt-4">
+          <button
+            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+            Calculate
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

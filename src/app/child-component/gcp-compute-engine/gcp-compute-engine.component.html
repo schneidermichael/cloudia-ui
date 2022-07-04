@@ -1,0 +1,63 @@
+<div>
+  <form>
+    <div class="shadow overflow-hidden sm:rounded-md">
+      <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-1">
+          <h3 class="text-2xl">GCP</h3>
+        </div>
+        <div class="grid grid-cols-1">
+          <h3 class="text-xl text-gray-400">Compute Engine</h3>
+        </div>
+        <div class="grid grid-cols-2 pt-2">
+          <label for="region" class="block text-sm font-medium text-gray-700">Region</label>
+          <label for="zone" class="block text-sm font-medium text-gray-700">Zone</label>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <select id="region" name="region"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let region of regions">{{region.name}}</option>
+          </select>
+          <select id="zone" name="zone"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let zone of zones">{{zone.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="series" class="block text-sm font-medium text-gray-700">Series</label>
+          <select id="series" name="series"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let serie of series">{{serie.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="machine-type" class="block text-sm font-medium text-gray-700">Machine type</label>
+          <select [(ngModel)]="selectedMachineType" id="machine-type" name="machine-type"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let machine of machines">{{machine.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="operating-system" class="block text-sm font-medium text-gray-700">Operating system</label>
+          <select id="operating-system" name="operating-system"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let operatingsystem of operatingsystems">{{operatingsystem.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
+          <select [(ngModel)]="selectedSize" id="size" name="size"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let size of sizes">{{size.gb}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-4">
+          <button
+            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+            Calculate
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

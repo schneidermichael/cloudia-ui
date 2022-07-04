@@ -13,7 +13,6 @@ import {HelpComponent} from "./unauthorized/help/help.component";
 import {PageNotFoundComponent} from "./unauthorized/page-not-found/page-not-found.component";
 import {HistoryComponent} from "./authorized/history/history.component";
 import {PostgresqlComponent} from "./authorized/postgresql/postgresql.component";
-import {VirtualMachineComponent} from "./authorized/virtual-machine/virtual-machine.component";
 import {FreemiumComponent} from "./unauthorized/freemium/freemium.component";
 
 const routes: Routes = [
@@ -36,11 +35,6 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthenticationGuard]
-  },
-  {
-    path: 'virtual-machine',
-    component: VirtualMachineComponent,
     canActivate: [AuthenticationGuard]
   },
   {

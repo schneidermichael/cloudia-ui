@@ -8,6 +8,20 @@ import {Serie} from "../../shared/interface/gcp-series";
 })
 export class HomeComponent {
 
+  selectedProviderA : String | undefined;
+  selectedProviderB : String | undefined;
+
+  optionsProviderA = [
+    { name: "AWS", value: 1 },
+    { name: "GCP", value: 2 },
+    { name: "Azure", value: 3 }
+  ]
+
+  optionsProviderB = [
+    { name: "AWS", value: 1 },
+    { name: "GCP", value: 2 },
+    { name: "Azure", value: 3 }
+  ]
   selectedMachineType : Serie | undefined;
   selectedSize : number | undefined;
 

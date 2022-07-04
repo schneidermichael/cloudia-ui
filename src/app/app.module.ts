@@ -23,9 +23,19 @@ import {AuthenticationService} from "./shared/service/authentication.service";
 import {ProfileService} from "./shared/service/profile.service";
 import { PostgresqlComponent } from './authorized/postgresql/postgresql.component';
 import { HistoryComponent } from './authorized/history/history.component';
-import { VirtualMachineComponent } from './authorized/virtual-machine/virtual-machine.component';
 import { FreemiumComponent } from './unauthorized/freemium/freemium.component';
-import { ComputeEngineComponent } from './unauthorized/compute-engine/compute-engine.component';
+import { AwsElasticComputingCloudComponent } from './child-component/aws-elastic-computing-cloud/aws-elastic-computing-cloud.component';
+import { AzureVirtualMachineComponent } from './child-component/azure-virtual-machine/azure-virtual-machine.component';
+import { GcpCloudSqlComponent } from './child-component/gcp-cloud-sql/gcp-cloud-sql.component';
+import { AzurePostgresqlComponent } from './child-component/azure-postgresql/azure-postgresql.component';
+import { AwsRelationalDatabaseComponent } from './child-component/aws-relational-database-service/aws-relational-database.component';
+import {GcpComputeEngineComponent} from "./child-component/gcp-compute-engine/gcp-compute-engine.component";
+import { AzureVmCalculateComponent } from './child-component/azure-vm-calculate/azure-vm-calculate.component';
+import { GcpVmCalculateComponent } from './child-component/gcp-vm-calculate/gcp-vm-calculate.component';
+import { AwsVmCalculateComponent } from './child-component/aws-vm-calculate/aws-vm-calculate.component';
+import { AwsPostgresqlCalculateComponent } from './child-component/aws-postgresql-calculate/aws-postgresql-calculate.component';
+import { GcpPostgresqlCalculateComponent } from './child-component/gcp-postgresql-calculate/gcp-postgresql-calculate.component';
+import { AzurePostgresqlCalculateComponent } from './child-component/azure-postgresql-calculate/azure-postgresql-calculate.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +54,19 @@ import { ComputeEngineComponent } from './unauthorized/compute-engine/compute-en
     PageNotFoundComponent,
     PostgresqlComponent,
     HistoryComponent,
-    VirtualMachineComponent,
     FreemiumComponent,
-    ComputeEngineComponent
+    GcpComputeEngineComponent,
+    AwsElasticComputingCloudComponent,
+    AzureVirtualMachineComponent,
+    GcpCloudSqlComponent,
+    AzurePostgresqlComponent,
+    AwsRelationalDatabaseComponent,
+    AzureVmCalculateComponent,
+    GcpVmCalculateComponent,
+    AwsVmCalculateComponent,
+    AwsPostgresqlCalculateComponent,
+    GcpPostgresqlCalculateComponent,
+    AzurePostgresqlCalculateComponent
   ],
   imports: [
     BrowserModule,
