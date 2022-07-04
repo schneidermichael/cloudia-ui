@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BusinessComponent } from './business.component';
+import { FreemiumComponent } from './freemium.component';
 
-describe('BusinessComponent', () => {
-  let component: BusinessComponent;
-  let fixture: ComponentFixture<BusinessComponent>;
+describe('FreemiumComponent', () => {
+  let component: FreemiumComponent;
+  let fixture: ComponentFixture<FreemiumComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BusinessComponent ]
+      declarations: [ FreemiumComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BusinessComponent);
+    fixture = TestBed.createComponent(FreemiumComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

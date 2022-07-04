@@ -43,20 +43,28 @@
             <a i18n routerLink="/home"
                class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
 
+            <a i18n routerLink="/virtual-machine"
+               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Virtual Machine</a>
+
+            <a i18n routerLink="/postgresql"
+               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">PostgreSQL</a>
+
+            <a i18n routerLink="/history"
+               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">History</a>
+
             <a i18n routerLink="/profile"
                class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+
+
           </div>
 
           <div class="flex space-x-4" *ngIf="!this.authenticationService.isLoggedIn">
-            <a i18n routerLink="/features"
+            <a i18n routerLink="/"
                class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                aria-current="page">Features</a>
 
-            <a i18n routerLink="/"
-               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Business</a>
-
-            <a i18n routerLink="/company"
-               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Company</a>
+            <a i18n routerLink="/freemium"
+               class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Freemium</a>
 
             <a i18n routerLink="/help"
                class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Help</a>

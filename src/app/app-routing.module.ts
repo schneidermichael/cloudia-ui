@@ -8,18 +8,19 @@ import {ResendRegistrationComponent} from './unauthorized/resend-registration/re
 import {HomeComponent} from "./authorized/home/home.component";
 import {AuthenticationGuard} from "./shared/guard/authentication.guard";
 import {ProfileComponent} from "./authorized/profile/profile.component";
-import {BusinessComponent} from "./unauthorized/business/business.component";
 import {FeaturesComponent} from "./unauthorized/features/features.component";
 import {HelpComponent} from "./unauthorized/help/help.component";
-import {CompanyComponent} from "./unauthorized/company/company.component";
 import {PageNotFoundComponent} from "./unauthorized/page-not-found/page-not-found.component";
+import {HistoryComponent} from "./authorized/history/history.component";
+import {PostgresqlComponent} from "./authorized/postgresql/postgresql.component";
+import {VirtualMachineComponent} from "./authorized/virtual-machine/virtual-machine.component";
+import {FreemiumComponent} from "./unauthorized/freemium/freemium.component";
 
 const routes: Routes = [
 
-  {path: '', component: BusinessComponent},
-  {path: 'features', component: FeaturesComponent},
+  {path: '', component: FeaturesComponent},
   {path: 'help', component: HelpComponent},
-  {path: 'company', component: CompanyComponent},
+  {path: 'freemium', component: FreemiumComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'success', component: RegisterSuccessComponent},
@@ -35,6 +36,21 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'virtual-machine',
+    component: VirtualMachineComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'postgresql',
+    component: PostgresqlComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
     canActivate: [AuthenticationGuard]
   },
   {path: '**', component: PageNotFoundComponent}

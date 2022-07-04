@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompanyComponent } from './company.component';
+import { VirtualMachineComponent } from './virtual-machine.component';
 
-describe('CompanyComponent', () => {
-  let component: CompanyComponent;
-  let fixture: ComponentFixture<CompanyComponent>;
+describe('VirtualMachineComponent', () => {
+  let component: VirtualMachineComponent;
+  let fixture: ComponentFixture<VirtualMachineComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CompanyComponent ]
+      declarations: [ VirtualMachineComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CompanyComponent);
+    fixture = TestBed.createComponent(VirtualMachineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

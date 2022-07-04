@@ -36,7 +36,6 @@ export class ResendRegistrationComponent {
       //   );
     }
     return this.router.navigateByUrl('success');
-
   }
 
 
