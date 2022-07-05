@@ -10,6 +10,8 @@ export class GcpVmCalculateComponent  {
   selectedMachineType : Serie | undefined;
   selectedSize : number | undefined;
 
-  constructor() { }
+  constructor() {
+    //This is empty
+  }
 
 }

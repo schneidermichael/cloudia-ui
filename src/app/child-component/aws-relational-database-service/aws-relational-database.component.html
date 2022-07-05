@@ -1,1 +1,42 @@
-<p>amazon-rds works!</p>
+<div>
+  <form>
+    <div class="shadow overflow-hidden sm:rounded-md">
+      <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-1">
+          <h3 class="text-2xl">AWS</h3>
+        </div>
+        <div class="grid grid-cols-1">
+          <h3 class="text-xl text-gray-400">RDS for PostgreSQL</h3>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="aws-region" class="block text-sm font-medium text-gray-700">Region</label>
+          <select id="aws-region" name="aws-region"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let region of regions">{{region.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="aws-db-instance" class="block text-sm font-medium text-gray-700">Database instance</label>
+          <select id="aws-db-instance" name="aws-db-instance"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let region of regions">{{region.name}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="aws-storage-size" class="block text-sm font-medium text-gray-700">Storage size (GB)</label>
+          <select [(ngModel)]="selectedSize" id="aws-storage-size" name="aws-storage-size"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let size of sizes">{{size.gb}}</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 pt-4">
+          <button
+            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+            Calculate
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {REGIONS, SIZES} from "../../shared/mock/mock-gcp";
 
 @Component({
   selector: 'app-aws-relational-database-service',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class AwsRelationalDatabaseComponent {
+
+  selectedSize : number | undefined;
+
+  regions = REGIONS;
+  sizes = SIZES;
 
   constructor() {
     //This is empty

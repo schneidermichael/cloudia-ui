@@ -8,8 +8,8 @@ import {Serie} from "../../shared/interface/gcp-series";
 })
 export class HomeComponent {
 
-  selectedProviderA : String | undefined;
-  selectedProviderB : String | undefined;
+  selectedProviderA : string | undefined;
+  selectedProviderB : string | undefined;
 
   optionsProviderA = [
     { name: "AWS", value: 1 },
