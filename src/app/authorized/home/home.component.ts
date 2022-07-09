@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {MACHINES, OPERATINGSYSTEMS, REGIONS, SERIES, SIZES, ZONES} from "../../shared/mock/mock-gcp";
-import {Serie} from "../../shared/interface/gcp-series";
+import {HistoryService} from "../../shared/service/history.service";
+import {CreateHistoryRequest} from "../../shared/interface/create-history";
+import {AuthenticationService} from "../../shared/service/authentication.service";
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,9 @@ import {Serie} from "../../shared/interface/gcp-series";
 })
 export class HomeComponent {
 
+  constructor(private authenticationService: AuthenticationService, private historyService : HistoryService) {}
+
+  request = {} as CreateHistoryRequest;
   selectedProviderA : string | undefined;
   selectedProviderB : string | undefined;
 
@@ -22,18 +26,66 @@ export class HomeComponent {
     { name: "GCP", value: 2 },
     { name: "Azure", value: 3 }
   ]
-  selectedMachineType : Serie | undefined;
-  selectedSize : number | undefined;
 
-  regions = REGIONS;
-  zones = ZONES;
-  series = SERIES;
-  machines = MACHINES;
-  operatingsystems = OPERATINGSYSTEMS;
-  sizes = SIZES;
+  awsPrice = 0;
+  awsSize  = 0;
 
-  constructor() { // This is intentional
-     }
+  gcpPrice = 0;
+  gcpSize  = 0;
 
+  azurePrice = 0;
+  azureSize  = 0;
+
+  changePriceAws(price: number) {
+    this.awsPrice = price;
+  }
+
+  changeSizeAws(size: number) {
+    this.awsSize = size;
+  }
+
+  changePriceGcp(price: number) {
+    this.gcpPrice = price;
+  }
+
+  changeSizeGcp(size: number) {
+    this.gcpSize = size;
+  }
+
+  changePriceAzure(price: number) {
+    this.azurePrice = price;
+  }
+
+  changeSizeAzure(size: number) {
+    this.azureSize = size;
+  }
+
+  createHistory() {
+    this.request.userId = this.authenticationService.getUserId();
+    this.request.type = "Virtual Machine"
+    if (this.selectedProviderA != null) {
+      this.request.providerA = this.selectedProviderA;
+    }
+    if (this.selectedProviderB != null) {
+      this.request.providerB = this.selectedProviderB;
+    }
+    if (this.selectedProviderA == "AWS"){
+      this.request.priceA = this.awsPrice;
+    }else if (this.selectedProviderA == "GCP"){
+      this.request.priceA = this.gcpPrice;
+    }else{
+      this.request.priceA = this.azurePrice;
+    }
+
+    if (this.selectedProviderB == "AWS"){
+      this.request.priceB = this.awsPrice;
+    }else if (this.selectedProviderB == "GCP"){
+      this.request.priceB = this.gcpPrice;
+    }else{
+      this.request.priceB = this.azurePrice;
+    }
+
+    this.historyService.create(this.request).subscribe(value => console.log(value));
+  }
 
 }

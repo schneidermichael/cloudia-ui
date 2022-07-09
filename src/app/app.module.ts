@@ -36,6 +36,8 @@ import { AwsVmCalculateComponent } from './child-component/aws-vm-calculate/aws-
 import { AwsPostgresqlCalculateComponent } from './child-component/aws-postgresql-calculate/aws-postgresql-calculate.component';
 import { GcpPostgresqlCalculateComponent } from './child-component/gcp-postgresql-calculate/gcp-postgresql-calculate.component';
 import { AzurePostgresqlCalculateComponent } from './child-component/azure-postgresql-calculate/azure-postgresql-calculate.component';
+import { ChartComponent } from './authorized/chart/chart.component';
+import {NgChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -66,14 +68,16 @@ import { AzurePostgresqlCalculateComponent } from './child-component/azure-postg
     AwsVmCalculateComponent,
     AwsPostgresqlCalculateComponent,
     GcpPostgresqlCalculateComponent,
-    AzurePostgresqlCalculateComponent
+    AzurePostgresqlCalculateComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule
   ],
   providers: [
     AuthenticationService,

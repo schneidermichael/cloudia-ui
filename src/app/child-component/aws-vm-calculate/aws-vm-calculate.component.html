@@ -8,14 +8,14 @@
   <label class="block text-sm font-medium text-[#707070] text-right pr-4">Monthly estimate</label>
 </div>
 <div class="grid grid-cols-2 pt-2  border-b-2 border-b-gray-200 ">
-  <label class="block text-sm font-medium text-[#707070] text-left pl-4 ">{{selectedMachineType}}</label>
-  <label class="block text-sm font-medium text-[#707070] text-right pr-4">$6.73</label>
+  <label class="block text-sm font-medium text-[#707070] text-left pl-4 "></label>
+  <label class="block text-sm font-medium text-[#707070] text-right pr-4">{{priceInDollar * 730 | currency:'USD'}}</label>
 </div>
 <div class="grid grid-cols-2 pt-2  border-b-2 border-b-gray-200 ">
-  <label class="block text-sm font-medium text-[#707070] text-left pl-4 ">{{selectedSize}} GB</label>
-  <label class="block text-sm font-medium text-[#707070] text-right pr-4">$11.00</label>
+  <label class="block text-sm font-medium text-[#707070] text-left pl-4 ">{{sizeInGigabyte }} GB</label>
+  <label class="block text-sm font-medium text-[#707070] text-right pr-4">{{sizeInGigabyte * 0.1 | currency:'USD'}}</label>
 </div>
 <div class="grid grid-cols-2 pt-2  border-b-2 border-b-gray-200 ">
   <label class="block text-sm font-bold text-[#707070] text-left pl-4 ">Total</label>
-  <label class="block text-sm font-bold text-[#707070] text-right pr-4">$17.73</label>
+  <label class="block text-sm font-bold text-[#707070] text-right pr-4">{{priceInDollar * 730 + sizeInGigabyte * 0.1 | currency:'USD'}}</label>
 </div>

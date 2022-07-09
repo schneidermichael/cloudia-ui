@@ -3,8 +3,7 @@
     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <table class="min-w-full">
-            <caption>History of compared products</caption>
+          <table aria-describedby="History table of Comparisons" class="min-w-full">
             <thead class="bg-white border-b bg-[#27d17f]">
             <tr>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -27,49 +26,23 @@
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
               </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              </th>
             </tr>
             </thead>
             <tbody>
-            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100" *ngFor="let item of data">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.createdAt | date:'medium':'':'de-DE'}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{item.type}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{item.providerA}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{item.providerB}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{item.priceA}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{item.priceB}}</td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Virtual Machine
+                <button [routerLink]="['/chart', item.id]" type="button" class="inline-block px-6 py-2 border-2 border-green-500 text-black-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Chart</button>
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                AWS
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Azure
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                132.34 $
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                120.30 $
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                <button type="button" class="inline-block px-6 py-2 border-2 border-green-500 text-black-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Chart</button>
-              </td>
-            </tr>
-            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                PostgreSQL
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                AWS
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                GCP
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                102.14 $
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                140.30 $
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                <button type="button" class="inline-block px-6 py-2 border-2 border-green-500 text-black-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#exampleModalXl">Chart</button>
+                <button (click)="delete(item.id)" type="button" class="inline-block px-6 py-2 border-2 border-red-500 text-black-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Delete</button>
               </td>
             </tr>
             </tbody>

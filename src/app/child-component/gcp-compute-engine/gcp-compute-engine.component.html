@@ -8,55 +8,42 @@
         <div class="grid grid-cols-1">
           <h3 class="text-xl text-gray-400">Compute Engine</h3>
         </div>
-        <div class="grid grid-cols-2 pt-2">
-          <label for="region" class="block text-sm font-medium text-gray-700">Region</label>
-          <label for="zone" class="block text-sm font-medium text-gray-700">Zone</label>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="gcp-region" class="block text-sm font-medium text-gray-700">Region</label>
         </div>
-        <div class="grid grid-cols-2 gap-2">
-          <select id="region" name="region"
+        <div class="grid grid-cols-1 gap-2">
+          <select [(ngModel)]="selectedRegion" (ngModelChange)="selectedRegionChanged()" id="gcp-region" name="gcp-region"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
-          </select>
-          <select id="zone" name="zone"
-                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let zone of zones">{{zone.name}}</option>
+            <option *ngFor="let item of region">{{item.region}}</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-2">
-          <label for="series" class="block text-sm font-medium text-gray-700">Series</label>
-          <select id="series" name="series"
+          <label for="gcp-operating-system" class="block text-sm font-medium text-gray-700">Operating system</label>
+          <select id="gcp-operating-system" name="gcp-operating-system"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let serie of series">{{serie.name}}</option>
+            <option *ngFor="let item of image">{{item.image}}</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-2">
-          <label for="machine-type" class="block text-sm font-medium text-gray-700">Machine type</label>
-          <select [(ngModel)]="selectedMachineType" id="machine-type" name="machine-type"
+          <label for="gcp-machine-type" class="block text-sm font-medium text-gray-700">Machine type</label>
+          <select [(ngModel)]="selectedMachineType" (ngModelChange)="selectedPricePerHourChanged($event)" id="gcp-machine-type" name="gcp-machine-type"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let machine of machines">{{machine.name}}</option>
+            <option *ngFor="let item of machineType" [ngValue]="item.price_per_hour">Family: {{item.machine_type}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-2">
-          <label for="operating-system" class="block text-sm font-medium text-gray-700">Operating system</label>
-          <select id="operating-system" name="operating-system"
-                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let operatingsystem of operatingsystems">{{operatingsystem.name}}</option>
-          </select>
+          <label for="gcp-machine-price" class="block text-sm font-medium text-gray-700">Price per hour</label>
+          <input type="text" id="gcp-machine-price" #gcpMachinePrice name="gcp-machine-price"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                 [(ngModel)]="selectedMachineType" disabled>
+
         </div>
-        <div class="grid grid-cols-1 pt-2">
-          <label for="size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
-          <select [(ngModel)]="selectedSize" id="size" name="size"
-                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let size of sizes">{{size.gb}}</option>
-          </select>
+        <div>
+        <label for="gcp-size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
+        <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="gcp-size" name="gcp-size"
+               class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
         </div>
-        <div class="grid grid-cols-1 pt-4">
-          <button
-            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
-            Calculate
-          </button>
         </div>
-      </div>
 
     </div>
   </form>

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {Serie} from "../../shared/interface/gcp-series";
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-aws-vm-calculate',
@@ -7,12 +6,11 @@ import {Serie} from "../../shared/interface/gcp-series";
 })
 export class AwsVmCalculateComponent {
 
-  selectedMachineType : Serie | undefined;
-  selectedSize : number | undefined;
+  @Input() priceInDollar = 0;
+  @Input() sizeInGigabyte = 0;
 
   constructor() {
     //This is empty
   }
-
 
 }

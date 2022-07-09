@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AzureVirtualMachineComponent } from './azure-virtual-machine.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {RouterTestingModule} from "@angular/router/testing";
+import {HomeComponent} from "../../authorized/home/home.component";
 
 describe('AzureVirtualMachineComponent', () => {
   let component: AzureVirtualMachineComponent;
@@ -8,6 +12,7 @@ describe('AzureVirtualMachineComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, ],
       declarations: [ AzureVirtualMachineComponent ]
     })
     .compileComponents();

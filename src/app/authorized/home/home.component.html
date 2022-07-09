@@ -19,15 +19,24 @@
           </div>
 
           <div *ngIf="selectedProviderA === 'AWS'">
-            <app-aws-elastic-computing-cloud></app-aws-elastic-computing-cloud>
+            <app-aws-elastic-computing-cloud
+              (pricePerHourEvent)="changePriceAws($event)"
+              (storageSizeEvent)="changeSizeAws($event)">
+            </app-aws-elastic-computing-cloud>
           </div>
 
           <div *ngIf="selectedProviderA === 'GCP'">
-            <app-gcp-compute-engine></app-gcp-compute-engine>
+            <app-gcp-compute-engine
+              (pricePerHourEvent)="changePriceGcp($event)"
+              (storageSizeEvent)="changeSizeGcp($event)">
+            </app-gcp-compute-engine>
           </div>
 
           <div *ngIf="selectedProviderA === 'Azure'">
-            <app-azure-virtual-machine></app-azure-virtual-machine>
+            <app-azure-virtual-machine
+              (pricePerHourEvent)="changePriceAzure($event)"
+              (storageSizeEvent)="changeSizeAzure($event)">
+            </app-azure-virtual-machine>
           </div>
 
         </div>
@@ -50,15 +59,24 @@
           </div>
 
           <div *ngIf="selectedProviderB === 'AWS'">
-            <app-aws-elastic-computing-cloud></app-aws-elastic-computing-cloud>
+            <app-aws-elastic-computing-cloud
+              (pricePerHourEvent)="changePriceAws($event)"
+              (storageSizeEvent)="changeSizeAws($event)">
+            </app-aws-elastic-computing-cloud>
           </div>
 
           <div *ngIf="selectedProviderB === 'GCP'">
-            <app-gcp-compute-engine></app-gcp-compute-engine>
+            <app-gcp-compute-engine
+              (pricePerHourEvent)="changePriceGcp($event)"
+              (storageSizeEvent)="changeSizeGcp($event)">
+            </app-gcp-compute-engine>
           </div>
 
           <div *ngIf="selectedProviderB === 'Azure'">
-            <app-azure-virtual-machine></app-azure-virtual-machine>
+            <app-azure-virtual-machine
+              (pricePerHourEvent)="changePriceAzure($event)"
+              (storageSizeEvent)="changeSizeAzure($event)">
+            </app-azure-virtual-machine>
           </div>
 
         </div>
@@ -71,34 +89,60 @@
               <h3 class="text-2xl">Summary</h3>
             </div>
 
-
             <div *ngIf="selectedProviderA === 'AWS'">
-              <app-aws-vm-calculate></app-aws-vm-calculate>
+              <app-aws-vm-calculate
+                [priceInDollar]="awsPrice"
+                [sizeInGigabyte]="awsSize">
+              </app-aws-vm-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'GCP'">
-              <app-gcp-vm-calculate></app-gcp-vm-calculate>
+              <app-gcp-vm-calculate
+                [priceInDollar]="gcpPrice"
+                [sizeInGigabyte]="gcpSize">
+              </app-gcp-vm-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'Azure'">
-              <app-azure-vm-calculate></app-azure-vm-calculate>
+              <app-azure-vm-calculate
+                [priceInDollar]="azurePrice"
+                [sizeInGigabyte]="azureSize">
+              </app-azure-vm-calculate>
             </div>
 
             <div class="pt-2">
             </div>
 
             <div *ngIf="selectedProviderB === 'AWS'">
-              <app-aws-vm-calculate></app-aws-vm-calculate>
+              <app-aws-vm-calculate
+                [priceInDollar]="awsPrice"
+                [sizeInGigabyte]="awsSize">
+              </app-aws-vm-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'GCP'">
-              <app-gcp-vm-calculate></app-gcp-vm-calculate>
+              <app-gcp-vm-calculate
+                [priceInDollar]="gcpPrice"
+                [sizeInGigabyte]="gcpSize">
+              </app-gcp-vm-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'Azure'">
-              <app-azure-vm-calculate></app-azure-vm-calculate>
+              <app-azure-vm-calculate
+                [priceInDollar]="azurePrice"
+                [sizeInGigabyte]="azureSize">
+              </app-azure-vm-calculate>
             </div>
 
+            <div class="pt-2">
+            </div>
+
+            <div *ngIf="selectedProviderA  && selectedProviderB ">
+              <button (click)="createHistory()"
+                class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+                History
+              </button>
+            </div>
           </div>
         </div>
       </div>

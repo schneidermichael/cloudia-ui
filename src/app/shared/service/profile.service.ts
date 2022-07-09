@@ -12,10 +12,10 @@ export class ProfileService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getProfile() {
-    return this.http.get<User>(`${environment.apiBaseUrl}/users/profil`);
+    return this.http.get<User>(`${environment.apiBaseUrl}/user/profil`);
   }
 
   deleteProfile(id: number | undefined){
-    return this.http.delete(`${environment.apiBaseUrl}/users/profil/${id}`);
+    return this.http.delete(`${environment.apiBaseUrl}/user/profil/${id}`);
   }
 }

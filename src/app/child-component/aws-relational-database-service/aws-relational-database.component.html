@@ -12,21 +12,18 @@
           <label for="aws-region" class="block text-sm font-medium text-gray-700">Region</label>
           <select id="aws-region" name="aws-region"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="aws-db-instance" class="block text-sm font-medium text-gray-700">Database instance</label>
           <select id="aws-db-instance" name="aws-db-instance"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="aws-storage-size" class="block text-sm font-medium text-gray-700">Storage size (GB)</label>
           <select [(ngModel)]="selectedSize" id="aws-storage-size" name="aws-storage-size"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let size of sizes">{{size.gb}}</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-4">

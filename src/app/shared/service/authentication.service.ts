@@ -3,6 +3,8 @@ import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {User} from '../model/user.model';
 import {Router} from "@angular/router";
+import jwt_decode from "jwt-decode";
+
 
 const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
 
@@ -30,6 +32,12 @@ export class AuthenticationService {
     return sessionStorage.getItem('access_token');
   }
 
+  getUserId(){
+    // @ts-ignore
+    let decoded = jwt_decode(this.getToken());
+    // @ts-ignore
+    return decoded.sub;
+  }
   logout() {
     let removeToken = sessionStorage.removeItem('access_token');
     if (removeToken == null) {

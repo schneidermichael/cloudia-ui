@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Serie} from "../../shared/interface/gcp-series";
 
 @Component({
   selector: 'app-azure-postgresql-calculate',
@@ -7,7 +6,6 @@ import {Serie} from "../../shared/interface/gcp-series";
 })
 export class AzurePostgresqlCalculateComponent {
 
-  selectedMachineType : Serie | undefined;
   selectedSize : number | undefined;
 
   constructor() {

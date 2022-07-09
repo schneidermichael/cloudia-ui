@@ -10,34 +10,39 @@
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="azure-region" class="block text-sm font-medium text-gray-700">Region</label>
-          <select id="azure-region" name="azure-region"
+          <select [(ngModel)]="selectedRegion" (ngModelChange)="selectedRegionChanged()" id="azure-region" name="azure-region"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
+            <option *ngFor="let item of region">{{item.region}}</option>
           </select>
         </div>
-        <div class="grid grid-cols-1 pt-2">
-          <label for="azure-image" class="block text-sm font-medium text-gray-700">Image</label>
-          <select id="azure-image" name="azure-image"
+        <div  class="grid grid-cols-1 pt-2">
+          <label for="azure-machine-image" class="block text-sm font-medium text-gray-700">Amazon Machine MachineImage</label>
+          <select id="azure-machine-image" name="azure-machine-image"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
+            <option *ngFor="let item of operatingSystem">{{item.operating_system}}</option>
           </select>
         </div>
-        <div class="grid grid-cols-1 pt-2">
-          <label for="azure-size" class="block text-sm font-medium text-gray-700">Size</label>
-          <select id="azure-size" name="azure-size"
+        <div  class="grid grid-cols-1 pt-2">
+          <label for="azure-instance-serie" class="block text-sm font-medium text-gray-700">Instance Serie</label>
+          <select [(ngModel)]="selectedInstanceSerie" (ngModelChange)="selectedPricePerHourChanged($event)" id="azure-instance-serie" name="azure-instance-serie"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
+            <option *ngFor="let item of instanceSerie" [ngValue]="item.price_per_hour">Family: {{item.instance_serie}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
           </select>
+        </div>
+        <div  class="grid grid-cols-1 pt-2">
+          <label for="azure-instance-price" class="block text-sm font-medium text-gray-700">Price per hour</label>
+          <input type="text" id="azure-instance-price" #azureInstancePrice name="azure-instance-price"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                 [(ngModel)]="selectedInstanceSerie" disabled>
+
+        </div>
+        <div class="grid grid-cols-1 pt-2">
+          <label for="azure-size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
+          <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="azure-size" name="azure-size"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
         </div>
 
-        <div class="grid grid-cols-1 pt-4">
-          <button
-            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
-            Calculate
-          </button>
-        </div>
       </div>
-
     </div>
   </form>
 </div>

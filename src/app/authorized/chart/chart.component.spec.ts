@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GcpComputeEngineComponent } from './gcp-compute-engine.component';
+import { ChartComponent } from './chart.component';
+import {RouterTestingModule} from "@angular/router/testing";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 
-describe('ComputeEngineComponent', () => {
-  let component: GcpComputeEngineComponent;
-  let fixture: ComponentFixture<GcpComputeEngineComponent>;
+describe('ChartComponent', () => {
+  let component: ChartComponent;
+  let fixture: ComponentFixture<ChartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule],
-      declarations: [ GcpComputeEngineComponent ]
+      imports : [HttpClientTestingModule, RouterTestingModule],
+      declarations: [  ChartComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GcpComputeEngineComponent);
+    fixture = TestBed.createComponent(ChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

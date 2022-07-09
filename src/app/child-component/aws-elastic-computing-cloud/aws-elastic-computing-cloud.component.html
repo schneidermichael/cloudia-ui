@@ -10,38 +10,38 @@
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="aws-region" class="block text-sm font-medium text-gray-700">Region</label>
-          <select id="aws-region" name="aws-region"
+          <select [(ngModel)]="selectedRegion" (ngModelChange)="selectedRegionChanged()" id="aws-region" name="aws-region"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
+            <option *ngFor="let item of region">{{item.region}}</option>
           </select>
         </div>
-        <div class="grid grid-cols-1 pt-2">
-          <label for="amazon-machine-image" class="block text-sm font-medium text-gray-700">Amazon Machine Image</label>
+        <div  class="grid grid-cols-1 pt-2">
+          <label for="amazon-machine-image" class="block text-sm font-medium text-gray-700">Amazon Machine MachineImage</label>
           <select id="amazon-machine-image" name="amazon-machine-image"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
+            <option *ngFor="let item of image">{{item.machine_image}}</option>
           </select>
         </div>
-        <div class="grid grid-cols-1 pt-2">
+        <div  class="grid grid-cols-1 pt-2">
           <label for="amazon-instance-type" class="block text-sm font-medium text-gray-700">Instance Type</label>
-          <select id="amazon-instance-type" name="amazon-instance-type"
+          <select [(ngModel)]="selectedInstanceType" (ngModelChange)="selectedPricePerHourChanged($event)" id="amazon-instance-type" name="amazon-instance-type"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let region of regions">{{region.name}}</option>
+            <option *ngFor="let item of instanceType" [ngValue]="item.price_per_hour">Family: {{item.instance_type}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
           </select>
+        </div>
+        <div  class="grid grid-cols-1 pt-2">
+          <label for="amazon-instance-price" class="block text-sm font-medium text-gray-700">Price per hour</label>
+          <input type="text" id="amazon-instance-price" #awsInstancePrice name="amazon-instance-price"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                 [(ngModel)]="selectedInstanceType" disabled>
+
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="aws-size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
-          <select [(ngModel)]="selectedSize" id="aws-size" name="aws-size"
-                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let size of sizes">{{size.gb}}</option>
-          </select>
+          <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="aws-size" name="aws-size"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
         </div>
-        <div class="grid grid-cols-1 pt-4">
-          <button
-            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
-            Calculate
-          </button>
-        </div>
+
       </div>
 
     </div>

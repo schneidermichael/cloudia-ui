@@ -14,6 +14,7 @@ import {PageNotFoundComponent} from "./unauthorized/page-not-found/page-not-foun
 import {HistoryComponent} from "./authorized/history/history.component";
 import {PostgresqlComponent} from "./authorized/postgresql/postgresql.component";
 import {FreemiumComponent} from "./unauthorized/freemium/freemium.component";
+import {ChartComponent} from "./authorized/chart/chart.component";
 
 const routes: Routes = [
 
@@ -45,6 +46,11 @@ const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'chart/:id',
+    component: ChartComponent,
     canActivate: [AuthenticationGuard]
   },
   {path: '**', component: PageNotFoundComponent}
