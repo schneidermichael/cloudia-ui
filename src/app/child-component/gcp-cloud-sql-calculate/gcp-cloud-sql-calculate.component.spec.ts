@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GcpPostgresqlCalculateComponent } from './gcp-postgresql-calculate.component';
+import { GcpCloudSqlCalculateComponent } from './gcp-cloud-sql-calculate.component';
 
 describe('GcpPostgresqlCalculateComponent', () => {
-  let component: GcpPostgresqlCalculateComponent;
-  let fixture: ComponentFixture<GcpPostgresqlCalculateComponent>;
+  let component: GcpCloudSqlCalculateComponent;
+  let fixture: ComponentFixture<GcpCloudSqlCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GcpPostgresqlCalculateComponent ]
+      declarations: [ GcpCloudSqlCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GcpPostgresqlCalculateComponent);
+    fixture = TestBed.createComponent(GcpCloudSqlCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -19,15 +19,26 @@
           </div>
 
           <div *ngIf="selectedProviderA === 'AWS'">
-            <app-aws-relational-database-service></app-aws-relational-database-service>
+            <app-aws-relational-database
+              (instanceEvent)="changeInstanceAws($event)"
+              (sizeEvent)="changeSizeAws($event)">
+            </app-aws-relational-database>
           </div>
 
           <div *ngIf="selectedProviderA === 'GCP'">
-            <app-gcp-cloud-sql></app-gcp-cloud-sql>
+            <app-gcp-cloud-sql
+              (instanceEvent)="changeInstanceGcp($event)"
+              (cpuEvent)="changeSizeCpuGcp($event)"
+              (ramEvent)="changeSizeRamGcp($event)"
+              (sizeEvent)="changeSizeGcp($event)">
+            </app-gcp-cloud-sql>
           </div>
 
           <div *ngIf="selectedProviderA === 'Azure'">
-            <app-azure-postgresql></app-azure-postgresql>
+            <app-azure-postgresql
+              (instanceEvent)="changeInstanceAzure($event)"
+              (sizeEvent)="changeSizeAzure($event)">
+            </app-azure-postgresql>
           </div>
 
         </div>
@@ -50,15 +61,26 @@
           </div>
 
           <div *ngIf="selectedProviderB === 'AWS'">
-            <app-aws-relational-database-service></app-aws-relational-database-service>
+            <app-aws-relational-database
+              (instanceEvent)="changeInstanceAws($event)"
+              (sizeEvent)="changeSizeAws($event)">
+            </app-aws-relational-database>
           </div>
 
           <div *ngIf="selectedProviderB === 'GCP'">
-            <app-gcp-cloud-sql></app-gcp-cloud-sql>
+            <app-gcp-cloud-sql
+              (instanceEvent)="changeInstanceGcp($event)"
+              (cpuEvent)="changeSizeCpuGcp($event)"
+              (ramEvent)="changeSizeRamGcp($event)"
+              (sizeEvent)="changeSizeGcp($event)">
+            </app-gcp-cloud-sql>
           </div>
 
           <div *ngIf="selectedProviderB === 'Azure'">
-            <app-azure-postgresql></app-azure-postgresql>
+            <app-azure-postgresql
+              (instanceEvent)="changeInstanceAzure($event)"
+              (sizeEvent)="changeSizeAzure($event)">
+            </app-azure-postgresql>
           </div>
 
         </div>
@@ -72,32 +94,70 @@
             </div>
 
             <div *ngIf="selectedProviderA === 'AWS'">
-              <app-aws-postgresql-calculate></app-aws-postgresql-calculate>
+              <app-aws-relational-database-calculate
+                [pricePerHour]="awsPricePerHour"
+                [pricePerGb]="awsPricePerGb"
+                [size]="awsSize">
+              </app-aws-relational-database-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'GCP'">
-              <app-gcp-postgresql-calculate></app-gcp-postgresql-calculate>
+              <app-gcp-cloud-sql-calculate
+                [pricePerCpu]="gcpPricePerCpu"
+                [pricePerRam]="gcpPricePerRam"
+                [pricePerGb]="gcpPricePerGb"
+                [sizePerCpu]="gcpSizePerCpu"
+                [sizePerRam]="gcpSizePerRam"
+                [size]="gcpSize">
+              </app-gcp-cloud-sql-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'Azure'">
-              <app-azure-postgresql-calculate></app-azure-postgresql-calculate>
+              <app-azure-postgresql-calculate
+                [pricePerHour]="azurePricePerHour"
+                [pricePerGb]="azurePricePerGb"
+                [size]="azureSize">
+              </app-azure-postgresql-calculate>
             </div>
 
             <div class="pt-2">
             </div>
 
             <div *ngIf="selectedProviderB === 'AWS'">
-              <app-aws-postgresql-calculate></app-aws-postgresql-calculate>
+              <app-aws-relational-database-calculate
+                [pricePerHour]="awsPricePerHour"
+                [pricePerGb]="awsPricePerGb"
+                [size]="awsSize">
+              </app-aws-relational-database-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'GCP'">
-              <app-gcp-postgresql-calculate></app-gcp-postgresql-calculate>
+              <app-gcp-cloud-sql-calculate
+                [pricePerCpu]="gcpPricePerCpu"
+                [pricePerRam]="gcpPricePerRam"
+                [pricePerGb]="gcpPricePerGb"
+                [sizePerCpu]="gcpSizePerCpu"
+                [sizePerRam]="gcpSizePerRam"
+                [size]="gcpSize">
+              </app-gcp-cloud-sql-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'Azure'">
-              <app-azure-postgresql-calculate></app-azure-postgresql-calculate>
+              <app-azure-postgresql-calculate
+                [pricePerHour]="azurePricePerHour"
+                [pricePerGb]="azurePricePerGb"
+                [size]="azureSize">
+              </app-azure-postgresql-calculate>
+            </div>
+            <div class="pt-2">
             </div>
 
+            <div *ngIf="selectedProviderA  && selectedProviderB ">
+              <button (click)="createHistory()"
+                      class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+                History
+              </button>
+            </div>
           </div>
         </div>
       </div>

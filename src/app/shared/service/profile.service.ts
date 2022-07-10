@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
 import {User} from "../model/user.model";
 import {environment} from "../../../environments/environment";
 
@@ -9,13 +8,13 @@ import {environment} from "../../../environments/environment";
 })
 export class ProfileService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   getProfile() {
-    return this.http.get<User>(`${environment.apiBaseUrl}/user/profil`);
+    return this.http.get<User>(`${environment.apiBaseUrl}/user/profile`);
   }
 
   deleteProfile(id: number | undefined){
-    return this.http.delete(`${environment.apiBaseUrl}/user/profil/${id}`);
+    return this.http.delete(`${environment.apiBaseUrl}/user/profile/${id}`);
   }
 }

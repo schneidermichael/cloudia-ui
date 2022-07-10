@@ -28,13 +28,13 @@ import { AwsElasticComputingCloudComponent } from './child-component/aws-elastic
 import { AzureVirtualMachineComponent } from './child-component/azure-virtual-machine/azure-virtual-machine.component';
 import { GcpCloudSqlComponent } from './child-component/gcp-cloud-sql/gcp-cloud-sql.component';
 import { AzurePostgresqlComponent } from './child-component/azure-postgresql/azure-postgresql.component';
-import { AwsRelationalDatabaseComponent } from './child-component/aws-relational-database-service/aws-relational-database.component';
+import { AwsRelationalDatabaseComponent } from './child-component/aws-relational-database/aws-relational-database.component';
 import {GcpComputeEngineComponent} from "./child-component/gcp-compute-engine/gcp-compute-engine.component";
-import { AzureVmCalculateComponent } from './child-component/azure-vm-calculate/azure-vm-calculate.component';
-import { GcpVmCalculateComponent } from './child-component/gcp-vm-calculate/gcp-vm-calculate.component';
-import { AwsVmCalculateComponent } from './child-component/aws-vm-calculate/aws-vm-calculate.component';
-import { AwsPostgresqlCalculateComponent } from './child-component/aws-postgresql-calculate/aws-postgresql-calculate.component';
-import { GcpPostgresqlCalculateComponent } from './child-component/gcp-postgresql-calculate/gcp-postgresql-calculate.component';
+import { AzureVirtualMachineCalculateComponent } from './child-component/azure-virtual-machine-calculate/azure-virtual-machine-calculate.component';
+import { GcpComputeEngineCalculateComponent } from './child-component/gcp-compute-engine-calculate/gcp-compute-engine-calculate.component';
+import { AwsElasticComputingCloudCalculateComponent } from './child-component/aws-elastic-computing-cloud-calculate/aws-elastic-computing-cloud-calculate.component';
+import { AwsRelationalDatabaseCalculateComponent } from './child-component/aws-relational-database-calculate/aws-relational-database-calculate.component';
+import { GcpCloudSqlCalculateComponent } from './child-component/gcp-cloud-sql-calculate/gcp-cloud-sql-calculate.component';
 import { AzurePostgresqlCalculateComponent } from './child-component/azure-postgresql-calculate/azure-postgresql-calculate.component';
 import { ChartComponent } from './authorized/chart/chart.component';
 import {NgChartsModule} from "ng2-charts";
@@ -63,11 +63,11 @@ import {NgChartsModule} from "ng2-charts";
     GcpCloudSqlComponent,
     AzurePostgresqlComponent,
     AwsRelationalDatabaseComponent,
-    AzureVmCalculateComponent,
-    GcpVmCalculateComponent,
-    AwsVmCalculateComponent,
-    AwsPostgresqlCalculateComponent,
-    GcpPostgresqlCalculateComponent,
+    AzureVirtualMachineCalculateComponent,
+    GcpComputeEngineCalculateComponent,
+    AwsElasticComputingCloudCalculateComponent,
+    AwsRelationalDatabaseCalculateComponent,
+    GcpCloudSqlCalculateComponent,
     AzurePostgresqlCalculateComponent,
     ChartComponent
   ],

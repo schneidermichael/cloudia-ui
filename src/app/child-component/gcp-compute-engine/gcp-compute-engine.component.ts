@@ -25,7 +25,7 @@ export class GcpComputeEngineComponent {
   machineType : MachineType[] | undefined;
 
   constructor(private service : GcpService) {
-    this.service.getRegion().subscribe(response => this.region = response);
+    this.service.getRegionComputeEngine().subscribe(response => this.region = response);
     this.service.getImage().subscribe(response => this.image = response);
     this.service.getMachineType().subscribe(response => {
       this.machineType = response.filter(value => value.region == this.selectedRegion);

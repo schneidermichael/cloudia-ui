@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GcpCloudSqlComponent } from './gcp-cloud-sql.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('CloudSqlComponent', () => {
   let component: GcpCloudSqlComponent;
@@ -8,6 +9,7 @@ describe('CloudSqlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports : [HttpClientTestingModule],
       declarations: [ GcpCloudSqlComponent ]
     })
     .compileComponents();

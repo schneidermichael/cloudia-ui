@@ -18,10 +18,10 @@ export class AuthenticationService {
 
   login(email: string, password: string) {
     const body = new HttpParams()
-      .set(`eMail`, email)
-      .set(`pwd`, password);
+      .set(`email`, email)
+      .set(`password`, password);
 
-    return this.http.post<any>(`${environment.apiBaseUrl}/auth/signin`, body, {headers});
+    return this.http.post<any>(`${environment.apiBaseUrl}/authentication/login`, body, {headers});
   }
 
   setToken(response: any) {
@@ -54,14 +54,14 @@ export class AuthenticationService {
     const body = new HttpParams()
       .set(`firstName`, _firstName)
       .set(`lastName`, _lastName)
-      .set(`eMail`, email)
-      .set(`pwd`, password);
+      .set(`email`, email)
+      .set(`password`, password);
 
-    return this.http.post<User>(`${environment.apiBaseUrl}/auth/register`, body, {headers});
+    return this.http.post<User>(`${environment.apiBaseUrl}/authentication/register`, body, {headers});
   }
 
   confirm(_token:string){
-    return this.http.get<any>(`${environment.apiBaseUrl}/auth/confirm?token=`+_token, {headers});
+    return this.http.get<any>(`${environment.apiBaseUrl}/authentication/confirm?token=`+_token, {headers});
   }
 
   lostPassword(_email: string) {

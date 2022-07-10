@@ -9,7 +9,6 @@ import {AuthenticationService} from "../../shared/service/authentication.service
 })
 export class HomeComponent {
 
-  constructor(private authenticationService: AuthenticationService, private historyService : HistoryService) {}
 
   request = {} as CreateHistoryRequest;
   selectedProviderA : string | undefined;
@@ -35,6 +34,8 @@ export class HomeComponent {
 
   azurePrice = 0;
   azureSize  = 0;
+
+  constructor(private authenticationService: AuthenticationService, private historyService : HistoryService) {}
 
   changePriceAws(price: number) {
     this.awsPrice = price;

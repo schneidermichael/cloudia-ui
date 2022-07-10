@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AzureVmCalculateComponent } from './azure-vm-calculate.component';
+import { AzureVirtualMachineCalculateComponent } from './azure-virtual-machine-calculate.component';
 
 describe('AzureVmCalculateComponent', () => {
-  let component: AzureVmCalculateComponent;
-  let fixture: ComponentFixture<AzureVmCalculateComponent>;
+  let component: AzureVirtualMachineCalculateComponent;
+  let fixture: ComponentFixture<AzureVirtualMachineCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AzureVmCalculateComponent ]
+      declarations: [ AzureVirtualMachineCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AzureVmCalculateComponent);
+    fixture = TestBed.createComponent(AzureVirtualMachineCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

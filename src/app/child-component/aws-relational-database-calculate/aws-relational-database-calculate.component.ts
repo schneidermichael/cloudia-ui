@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-azure-postgresql-calculate',
-  templateUrl: './azure-postgresql-calculate.component.html'
+  selector: 'app-aws-relational-database-calculate',
+  templateUrl: './aws-relational-database-calculate.component.html'
 })
-export class AzurePostgresqlCalculateComponent {
+export class AwsRelationalDatabaseCalculateComponent {
 
   @Input() pricePerHour = 0;
   @Input() pricePerGb = 0;
@@ -13,6 +13,5 @@ export class AzurePostgresqlCalculateComponent {
   constructor() {
     //This is empty
   }
-
 
 }

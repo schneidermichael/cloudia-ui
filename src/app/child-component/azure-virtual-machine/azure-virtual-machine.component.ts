@@ -24,7 +24,7 @@ export class AzureVirtualMachineComponent{
   instanceSerie : InstanceSerie[] | undefined;
 
   constructor(private service : AzureService) {
-    this.service.getRegion().subscribe(response => {
+    this.service.getRegionVirtualMachine().subscribe(response => {
       this.region = response;
     })
     this.service.getOperatingSystem().subscribe(response => {
@@ -36,7 +36,6 @@ export class AzureVirtualMachineComponent{
   }
 
   selectedRegionChanged() {
-
     this.service.getInstanceSerie().subscribe(response => {
       this.instanceSerie = response.filter(value => value.region == this.selectedRegion);
     })

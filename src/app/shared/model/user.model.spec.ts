@@ -6,14 +6,14 @@ describe('User class tests', () => {
   let id: number = 1;
   let createdAt: Date = new Date('2021-12-17T03:24:00');
   let updatedAt: Date = new Date('2020-12-17T03:24:00');
-  let title: string = 'BSc';
   let firstName: string = 'Max';
   let lastName: string = 'Mustermann';
   let email: string = 'max.mustermann@email.com';
   let password: string = environment.password;
+  let country: string = 'Austria';
 
   beforeEach(() => {
-    user = new User(id, createdAt, updatedAt, title, firstName, lastName, email, password);
+    user = new User(id, createdAt, updatedAt, firstName, lastName, email, password, country);
   });
 
   it('should have a valid constuctor', () => {
@@ -30,10 +30,6 @@ describe('User class tests', () => {
 
   it('should get updatedAt correctly ', () => {
     expect(user.updatedAt).toEqual(updatedAt);
-  });
-
-  it('should get title correctly ', () => {
-    expect(user.title).toEqual(title);
   });
 
   it('should get firstName correctly ', () => {
@@ -65,11 +61,6 @@ describe('User class tests', () => {
   it('should set updatedAt correctly ', () => {
     user.updatedAt = new Date('2018-12-17T03:24:00');
     expect(user.updatedAt).toEqual(new Date('2018-12-17T03:24:00'));
-  });
-
-  it('should set title correctly', () => {
-    user.title = 'MSc'
-    expect(user.title).toEqual('MSc');
   });
 
   it('should set firstName correctly ', () => {

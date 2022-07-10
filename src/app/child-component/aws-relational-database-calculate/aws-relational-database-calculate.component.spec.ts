@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AwsPostgresqlCalculateComponent } from './aws-postgresql-calculate.component';
+import { AwsRelationalDatabaseCalculateComponent } from './aws-relational-database-calculate.component';
 
 describe('AwsPostgresqlCalculateComponent', () => {
-  let component: AwsPostgresqlCalculateComponent;
-  let fixture: ComponentFixture<AwsPostgresqlCalculateComponent>;
+  let component: AwsRelationalDatabaseCalculateComponent;
+  let fixture: ComponentFixture<AwsRelationalDatabaseCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AwsPostgresqlCalculateComponent ]
+      declarations: [ AwsRelationalDatabaseCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AwsPostgresqlCalculateComponent);
+    fixture = TestBed.createComponent(AwsRelationalDatabaseCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

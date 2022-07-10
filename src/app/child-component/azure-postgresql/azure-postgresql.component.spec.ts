@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AzurePostgresqlComponent } from './azure-postgresql.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('AzurePostgresqlComponent', () => {
   let component: AzurePostgresqlComponent;
@@ -8,6 +9,7 @@ describe('AzurePostgresqlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports : [HttpClientTestingModule],
       declarations: [ AzurePostgresqlComponent ]
     })
     .compileComponents();

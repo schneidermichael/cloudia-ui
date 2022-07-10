@@ -24,7 +24,7 @@ export class AwsElasticComputingCloudComponent {
   instanceType : InstanceType[] | undefined;
 
   constructor(private service : AwsService) {
-    this.service.getRegion().subscribe(response => {
+    this.service.getRegionElasticCloudComputing().subscribe(response => {
       this.region = response;
     })
     this.service.getImage().subscribe(response => {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GcpVmCalculateComponent } from './gcp-vm-calculate.component';
+import { GcpComputeEngineCalculateComponent } from './gcp-compute-engine-calculate.component';
 
 describe('GcpVmCalculateComponent', () => {
-  let component: GcpVmCalculateComponent;
-  let fixture: ComponentFixture<GcpVmCalculateComponent>;
+  let component: GcpComputeEngineCalculateComponent;
+  let fixture: ComponentFixture<GcpComputeEngineCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GcpVmCalculateComponent ]
+      declarations: [ GcpComputeEngineCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GcpVmCalculateComponent);
+    fixture = TestBed.createComponent(GcpComputeEngineCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

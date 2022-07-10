@@ -2,22 +2,21 @@ export class User {
   private _id: number;
   private _createdAt: Date;
   private _updatedAt: Date;
-  private _title: string;
   private _firstName: string;
   private _lastName: string;
   private _email: string;
   private _password: string;
-  //TODO country is missing
+  private _country: string;
 
-  constructor(id: number, createdAt: Date, updatedAt: Date, title: string, firstName: string, lastName: string, email: string, password: string) {
+  constructor(id: number, createdAt: Date, updatedAt: Date, firstName: string, lastName: string, email: string, password: string, country: string) {
     this._id = id;
     this._createdAt = createdAt;
     this._updatedAt = updatedAt;
-    this._title = title;
     this._firstName = firstName;
     this._lastName = lastName;
     this._email = email;
     this._password = password;
+    this._country = country;
   }
 
   get id(): number {
@@ -42,14 +41,6 @@ export class User {
 
   set updatedAt(value: Date) {
     this._updatedAt = value;
-  }
-
-  get title(): string {
-    return this._title;
-  }
-
-  set title(value: string) {
-    this._title = value;
   }
 
   get firstName(): string {
@@ -82,5 +73,14 @@ export class User {
 
   set password(value: string) {
     this._password = value;
+  }
+
+
+  get country(): string {
+    return this._country;
+  }
+
+  set country(value: string) {
+    this._country = value;
   }
 }

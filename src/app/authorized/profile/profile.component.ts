@@ -14,15 +14,14 @@ export class ProfileComponent {
 
   constructor(private profileService: ProfileService, private authenticationService:AuthenticationService, private router: Router) {
     this.profileService.getProfile().subscribe((response : any) => {
-
       this.user.id = response['id'];
-      this.user.createdAt = response['id'];
-      this.user.updatedAt = response['updatedAt'];
-      this.user.title = response['title'];
-      this.user.firstName = response['firstName'];
-      this.user.lastName = response['lastName'];
-      this.user.email = response['eMail'];
+      this.user.createdAt = response['created_at'];
+      this.user.updatedAt = response['updated_at'];
+      this.user.firstName = response['first_name'];
+      this.user.lastName = response['last_name'];
+      this.user.email = response['email'];
       this.user.password = response['password'];
+      this.user.country = response['country_name']
     });
   }
 

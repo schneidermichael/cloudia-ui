@@ -10,28 +10,42 @@
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="gcp-region" class="block text-sm font-medium text-gray-700">Region</label>
-          <select id="gcp-region" name="gcp-region"
+          <select [(ngModel)]="selectedRegion" (ngModelChange)="selectedRegionChanged($event)" id="gcp-region" name="gcp-region"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <option *ngFor="let item of machineTypeDatabase" [ngValue]="item">{{item.region}}</option>
           </select>
         </div>
-        <div class="grid grid-cols-1 pt-2">
-          <label for="gcp-machine-type" class="block text-sm font-medium text-gray-700">Machine type</label>
-          <select id="gcp-machine-type" name="gcp-machine-type"
-                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-          </select>
+        <div class="grid grid-cols-2 pt-2">
+          <label for="gcp-cpu" class="block text-sm font-medium text-gray-700">Number </label>
+          <label for="gcp-cpu-price" class="block text-sm font-medium text-gray-700">Price per vCPU</label>
         </div>
-        <div class="grid grid-cols-1 pt-2">
-          <label for="gcp-storage-size" class="block text-sm font-medium text-gray-700">Storage size (GB)</label>
-          <select [(ngModel)]="selectedSize" id="gcp-storage-size" name="gcp-storage-size"
-                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-          </select>
+        <div class="grid grid-cols-2 gap-2">
+          <input type="number" [(ngModel)]="selectedCpuSize" (ngModelChange)="selectedCpuSizeChanged($event)"id="gcp-cpu" name="gcp-cpu"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+          <input type="number" [(ngModel)]="selectedCpuSizePerHour" id="gcp-cpu-price" name="gcp-cpu-price"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>
         </div>
-        <div class="grid grid-cols-1 pt-4">
-          <button
-            class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
-            Calculate
-          </button>
+        <div class="grid grid-cols-2  pt-2">
+          <label for="gcp-ram" class="block text-sm font-medium text-gray-700">Number </label>
+          <label for="gcp-ram-price" class="block text-sm font-medium text-gray-700">Price per RAM</label>
         </div>
+        <div class="grid grid-cols-2 gap-2">
+          <input type="number" [(ngModel)]="selectedRamSize" (ngModelChange)="selectedRamSizeChanged($event)"id="gcp-ram" name="gcp-ram"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+          <input type="number" [(ngModel)]="selectedRamSizePerHour" id="gcp-ram-price" name="gcp-ram-price"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>
+        </div>
+        <div class="grid grid-cols-2  pt-2">
+          <label for="gcp-size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
+          <label for="gcp-size-price" class="block text-sm font-medium text-gray-700">Price per GB</label>
+        </div>
+        <div class="grid grid-cols-2  gap-2">
+          <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedSizeChanged($event)"id="gcp-size" name="gcp-size"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+          <input type="number" [(ngModel)]="selectedPricePerGb" id="gcp-size-price" name="gcp-size-price"
+                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>
+        </div>
+
       </div>
 
     </div>

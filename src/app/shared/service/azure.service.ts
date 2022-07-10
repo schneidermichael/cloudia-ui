@@ -4,6 +4,7 @@ import {Region} from "../interface/region";
 import {environment} from "../../../environments/environment";
 import {InstanceSerie} from "../interface/instance-serie";
 import {OperatingSystem} from "../interface/operating-system";
+import {InstanceSerieDatabase} from "../interface/instance-serie-database";
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,12 @@ export class AzureService {
 
   constructor(private http: HttpClient) { }
 
-  getRegion(){
-    return this.http.get<Region[]>(`${environment.apiBaseUrl}/azure/region`);
+  getRegionVirtualMachine(){
+    return this.http.get<Region[]>(`${environment.apiBaseUrl}/azure/virtual-machine/region`);
+  }
+
+  getRegionPostgresql(){
+    return this.http.get<Region[]>(`${environment.apiBaseUrl}/azure/postgresql/region`);
   }
 
   getOperatingSystem(){
@@ -23,4 +28,9 @@ export class AzureService {
   getInstanceSerie(){
     return this.http.get<InstanceSerie[]>(`${environment.apiBaseUrl}/azure/virtual-machine/instance-serie`);
   }
+
+  getInstanceSerieDatabase(){
+    return this.http.get<InstanceSerieDatabase[]>(`${environment.apiBaseUrl}/azure/postgresql/instance-serie`);
+  }
+
 }

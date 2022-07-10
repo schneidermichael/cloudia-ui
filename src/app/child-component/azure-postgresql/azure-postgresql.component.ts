@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Region} from "../../shared/interface/region";
+import {InstanceSerieDatabase} from "../../shared/interface/instance-serie-database";
+import {AzureService} from "../../shared/service/azure.service";
 
 @Component({
   selector: 'app-azure-postgresql',
@@ -7,10 +10,41 @@ import { Component } from '@angular/core';
 })
 export class AzurePostgresqlComponent {
 
-  selectedSize : number | undefined;
+  @Output() instanceEvent = new EventEmitter<any>();
+  @Output() sizeEvent = new EventEmitter<number>();
 
-  constructor() {
-    //This is empty
+  selectedRegion : string = 'Central US';
+
+  selectedSize : number | undefined;
+  selectedPricePerHour : number | undefined;
+  selectedPricePerGb : number | undefined;
+  selectedInstanceSerieDatabase : InstanceSerieDatabase[] | undefined;
+
+  region: Region[] | undefined;
+  instanceSerieDatabase : InstanceSerieDatabase[] | undefined;
+
+  constructor(private service : AzureService) {
+    this.service.getRegionPostgresql().subscribe(response => {
+      this.region = response;
+    })
+    this.service.getInstanceSerieDatabase().subscribe(response => {
+      this.instanceSerieDatabase = response.filter(value => value.region == this.selectedRegion);
+    })
   }
 
+  selectedRegionChanged() {
+    this.service.getInstanceSerieDatabase().subscribe(response => {
+      this.instanceSerieDatabase = response.filter(value => value.region == this.selectedRegion);
+    })
+  }
+
+  selectedInstanceSerieChanged($event: any) {
+    this.selectedPricePerHour = $event.price_per_hour;
+    this.selectedPricePerGb = $event.price_per_gib;
+    this.instanceEvent.emit($event);
+  }
+
+  selectedStorageSizeChanged($event: any) {
+    this.sizeEvent.emit($event);
+  }
 }

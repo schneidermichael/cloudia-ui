@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-gcp-vm-calculate',
-  templateUrl: './gcp-vm-calculate.component.html'
+  selector: 'app-gcp-compute-engine-calculate',
+  templateUrl: './gcp-compute-engine-calculate.component.html'
 })
-export class GcpVmCalculateComponent  {
+export class GcpComputeEngineCalculateComponent {
 
   @Input() priceInDollar = 0;
   @Input() sizeInGigabyte = 0;

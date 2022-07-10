@@ -90,48 +90,48 @@
             </div>
 
             <div *ngIf="selectedProviderA === 'AWS'">
-              <app-aws-vm-calculate
+              <app-aws-elastic-computing-cloud-calculate
                 [priceInDollar]="awsPrice"
                 [sizeInGigabyte]="awsSize">
-              </app-aws-vm-calculate>
+              </app-aws-elastic-computing-cloud-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'GCP'">
-              <app-gcp-vm-calculate
+              <app-gcp-compute-engine-calculate
                 [priceInDollar]="gcpPrice"
                 [sizeInGigabyte]="gcpSize">
-              </app-gcp-vm-calculate>
+              </app-gcp-compute-engine-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'Azure'">
-              <app-azure-vm-calculate
+              <app-azure-virtual-machine-calculate
                 [priceInDollar]="azurePrice"
                 [sizeInGigabyte]="azureSize">
-              </app-azure-vm-calculate>
+              </app-azure-virtual-machine-calculate>
             </div>
 
             <div class="pt-2">
             </div>
 
             <div *ngIf="selectedProviderB === 'AWS'">
-              <app-aws-vm-calculate
+              <app-aws-elastic-computing-cloud-calculate
                 [priceInDollar]="awsPrice"
                 [sizeInGigabyte]="awsSize">
-              </app-aws-vm-calculate>
+              </app-aws-elastic-computing-cloud-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'GCP'">
-              <app-gcp-vm-calculate
+              <app-gcp-compute-engine-calculate
                 [priceInDollar]="gcpPrice"
                 [sizeInGigabyte]="gcpSize">
-              </app-gcp-vm-calculate>
+              </app-gcp-compute-engine-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'Azure'">
-              <app-azure-vm-calculate
+              <app-azure-virtual-machine-calculate
                 [priceInDollar]="azurePrice"
                 [sizeInGigabyte]="azureSize">
-              </app-azure-vm-calculate>
+              </app-azure-virtual-machine-calculate>
             </div>
 
             <div class="pt-2">
