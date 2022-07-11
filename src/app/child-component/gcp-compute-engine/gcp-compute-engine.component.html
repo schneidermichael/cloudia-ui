@@ -26,16 +26,16 @@
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="gcp-machine-type" class="block text-sm font-medium text-gray-700">Machine type</label>
-          <select [(ngModel)]="selectedMachineType" (ngModelChange)="selectedPricePerHourChanged($event)" id="gcp-machine-type" name="gcp-machine-type"
+          <select [(ngModel)]="selectedMachineType" (ngModelChange)="selectedMachineTypeChanged($event)" id="gcp-machine-type" name="gcp-machine-type"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let item of machineType" [ngValue]="item.price_per_hour">Family: {{item.machine_type}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
+            <option *ngFor="let item of machineType" [ngValue]="item">Family: {{item.machine_type}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
           </select>
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="gcp-machine-price" class="block text-sm font-medium text-gray-700">Price per hour</label>
           <input type="text" id="gcp-machine-price" #gcpMachinePrice name="gcp-machine-price"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
-                 [(ngModel)]="selectedMachineType" disabled>
+                 [(ngModel)]="selectedPricePerHour" disabled>
 
         </div>
         <div class="grid grid-cols-1 pt-2">

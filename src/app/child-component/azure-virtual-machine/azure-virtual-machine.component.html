@@ -24,16 +24,16 @@
         </div>
         <div  class="grid grid-cols-1 pt-2">
           <label for="azure-instance-serie" class="block text-sm font-medium text-gray-700">Instance Serie</label>
-          <select [(ngModel)]="selectedInstanceSerie" (ngModelChange)="selectedPricePerHourChanged($event)" id="azure-instance-serie" name="azure-instance-serie"
+          <select [(ngModel)]="selectedInstanceSerie" (ngModelChange)="selectedInstanceSerieChanged($event)" id="azure-instance-serie" name="azure-instance-serie"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-            <option *ngFor="let item of instanceSerie" [ngValue]="item.price_per_hour">Family: {{item.instance_serie}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
+            <option *ngFor="let item of instanceSerie" [ngValue]="item">Family: {{item.instance_serie}} {{item.core}} vCPU {{item.ram}} GiB Memory</option>
           </select>
         </div>
         <div  class="grid grid-cols-1 pt-2">
           <label for="azure-instance-price" class="block text-sm font-medium text-gray-700">Price per hour</label>
           <input type="text" id="azure-instance-price" #azureInstancePrice name="azure-instance-price"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
-                 [(ngModel)]="selectedInstanceSerie" disabled>
+                 [(ngModel)]="selectedPricePerHour" disabled>
 
         </div>
         <div class="grid grid-cols-1 pt-2">

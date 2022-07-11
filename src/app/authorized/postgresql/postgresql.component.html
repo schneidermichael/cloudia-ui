@@ -11,8 +11,8 @@
             <div class="grid grid-cols-1 pt-2">
               <select id="provider-a" [(ngModel)]="selectedProviderA"
                       class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-                <option *ngFor="let o of optionsProviderA">
-                  {{o.name}}
+                <option *ngFor="let option of optionsProvider">
+                  {{option.name}}
                 </option>
               </select>
             </div>
@@ -53,8 +53,8 @@
             <div class="grid grid-cols-1 pt-2">
               <select id="provider-b" [(ngModel)]="selectedProviderB"
                       class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-                <option *ngFor="let optionB of optionsProviderB">
-                  {{optionB.name}}
+                <option *ngFor="let option of optionsProvider">
+                  {{option.name}}
                 </option>
               </select>
             </div>
@@ -97,7 +97,8 @@
               <app-aws-relational-database-calculate
                 [pricePerHour]="awsPricePerHour"
                 [pricePerGb]="awsPricePerGb"
-                [size]="awsSize">
+                [size]="awsSize"
+                [information]="awsInformation">
               </app-aws-relational-database-calculate>
             </div>
 
@@ -116,7 +117,8 @@
               <app-azure-postgresql-calculate
                 [pricePerHour]="azurePricePerHour"
                 [pricePerGb]="azurePricePerGb"
-                [size]="azureSize">
+                [size]="azureSize"
+                [information]="azureInformation">
               </app-azure-postgresql-calculate>
             </div>
 
@@ -127,7 +129,8 @@
               <app-aws-relational-database-calculate
                 [pricePerHour]="awsPricePerHour"
                 [pricePerGb]="awsPricePerGb"
-                [size]="awsSize">
+                [size]="awsSize"
+                [information]="awsInformation">
               </app-aws-relational-database-calculate>
             </div>
 
@@ -146,7 +149,8 @@
               <app-azure-postgresql-calculate
                 [pricePerHour]="azurePricePerHour"
                 [pricePerGb]="azurePricePerGb"
-                [size]="azureSize">
+                [size]="azureSize"
+                [information]="azureInformation">
               </app-azure-postgresql-calculate>
             </div>
             <div class="pt-2">

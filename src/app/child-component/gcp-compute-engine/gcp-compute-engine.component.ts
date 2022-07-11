@@ -13,12 +13,13 @@ export class GcpComputeEngineComponent {
 
   @ViewChild('gcpMachinePrice') gcpMachinePrice: any;
 
-  @Output() pricePerHourEvent = new EventEmitter<number>();
+  @Output() machineEvent = new EventEmitter<number>();
   @Output() storageSizeEvent = new EventEmitter<number>();
 
   selectedRegion : string = 'us-west2';
   selectedSize : number = 20;
   selectedMachineType : MachineType | undefined;
+  selectedPricePerHour: number | undefined;
 
   region: Region[] | undefined;
   image: Image[] | undefined;
@@ -39,13 +40,13 @@ export class GcpComputeEngineComponent {
     this.gcpMachinePrice.nativeElement.value = ' ';
   }
 
-  selectedPricePerHourChanged(price: number) {
-    this.pricePerHourEvent.emit(price);
+  selectedMachineTypeChanged($event: any) {
+    this.machineEvent.emit($event);
+    this.selectedPricePerHour = $event.price_per_hour;
   }
 
   selectedStorageSizeChanged(size: number) {
     this.storageSizeEvent.emit(size);
   }
-
 
 }

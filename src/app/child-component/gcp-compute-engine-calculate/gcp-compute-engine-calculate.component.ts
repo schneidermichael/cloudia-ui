@@ -8,6 +8,7 @@ export class GcpComputeEngineCalculateComponent {
 
   @Input() priceInDollar = 0;
   @Input() sizeInGigabyte = 0;
+  @Input() information : any;
 
   constructor() {
     //This is empty

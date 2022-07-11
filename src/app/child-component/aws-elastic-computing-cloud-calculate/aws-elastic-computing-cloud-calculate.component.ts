@@ -8,6 +8,8 @@ export class AwsElasticComputingCloudCalculateComponent {
 
   @Input() priceInDollar = 0;
   @Input() sizeInGigabyte = 0;
+  @Input() information : any;
+
 
   constructor() {
     //This is empty

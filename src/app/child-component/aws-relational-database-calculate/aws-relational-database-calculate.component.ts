@@ -9,6 +9,7 @@ export class AwsRelationalDatabaseCalculateComponent {
   @Input() pricePerHour = 0;
   @Input() pricePerGb = 0;
   @Input() size = 0;
+  @Input() information : any;
 
   constructor() {
     //This is empty

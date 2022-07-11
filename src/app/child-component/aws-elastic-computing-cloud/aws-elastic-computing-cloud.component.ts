@@ -12,12 +12,13 @@ export class AwsElasticComputingCloudComponent {
 
   @ViewChild('awsInstancePrice') awsInstancePrice: any;
 
-  @Output() pricePerHourEvent = new EventEmitter<number>();
+  @Output() instanceEvent = new EventEmitter<number>();
   @Output() storageSizeEvent = new EventEmitter<number>();
 
   selectedRegion : string = 'ca-central-1';
   selectedSize : number = 10;
   selectedInstanceType : InstanceType | undefined;
+  selectedPricePerHour : number | undefined;
 
   region: Region[] | undefined;
   image: MachineImage[] | undefined;
@@ -42,12 +43,14 @@ export class AwsElasticComputingCloudComponent {
     this.awsInstancePrice.nativeElement.value = ' ';
   }
 
-  selectedPricePerHourChanged(price: number) {
-    this.pricePerHourEvent.emit(price);
+  selectedInstanceTypeChanged($event: any) {
+    this.selectedPricePerHour = $event.price_per_hour;
+    this.instanceEvent.emit($event);
   }
 
   selectedStorageSizeChanged(size: number) {
     this.storageSizeEvent.emit(size);
   }
+
 
 }

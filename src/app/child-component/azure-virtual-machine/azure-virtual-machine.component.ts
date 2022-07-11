@@ -12,12 +12,13 @@ export class AzureVirtualMachineComponent{
 
   @ViewChild('azureInstancePrice') azureInstancePrice: any;
 
-  @Output() pricePerHourEvent = new EventEmitter<number>();
+  @Output() instanceEvent = new EventEmitter<number>();
   @Output() storageSizeEvent = new EventEmitter<number>();
 
   selectedRegion : string = 'East US';
   selectedSize : number = 10;
   selectedInstanceSerie : InstanceSerie | undefined;
+  selectedPricePerHour: number | undefined;
 
   region: Region[] | undefined;
   operatingSystem: OperatingSystem[] | undefined;
@@ -42,8 +43,10 @@ export class AzureVirtualMachineComponent{
     this.azureInstancePrice.nativeElement.value = ' ';
   }
 
-  selectedPricePerHourChanged(price: number) {
-    this.pricePerHourEvent.emit(price);
+  selectedInstanceSerieChanged($event: any) {
+    this.instanceEvent.emit($event);
+    this.selectedPricePerHour = $event.price_per_hour;
+
   }
 
   selectedStorageSizeChanged(size: number) {

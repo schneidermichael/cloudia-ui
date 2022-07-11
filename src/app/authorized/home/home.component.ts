@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HistoryService} from "../../shared/service/history.service";
 import {CreateHistoryRequest} from "../../shared/interface/create-history";
 import {AuthenticationService} from "../../shared/service/authentication.service";
@@ -11,50 +11,51 @@ export class HomeComponent {
 
 
   request = {} as CreateHistoryRequest;
-  selectedProviderA : string | undefined;
-  selectedProviderB : string | undefined;
+  selectedProviderA = "AWS";
+  selectedProviderB = "GCP";
 
-  optionsProviderA = [
-    { name: "AWS", value: 1 },
-    { name: "GCP", value: 2 },
-    { name: "Azure", value: 3 }
-  ]
-
-  optionsProviderB = [
-    { name: "AWS", value: 1 },
-    { name: "GCP", value: 2 },
-    { name: "Azure", value: 3 }
-  ]
+  optionsProvider = [
+    {name: "AWS"},
+    {name: "GCP"},
+    {name: "Azure"}
+  ];
 
   awsPrice = 0;
-  awsSize  = 0;
+  awsInformation = 0;
+  awsSize = 0;
 
   gcpPrice = 0;
-  gcpSize  = 0;
+  gcpInformation = 0;
+  gcpSize = 0;
 
   azurePrice = 0;
-  azureSize  = 0;
+  azureInformation = 0;
+  azureSize = 0;
 
-  constructor(private authenticationService: AuthenticationService, private historyService : HistoryService) {}
+  constructor(private authenticationService: AuthenticationService, private historyService: HistoryService) {
+  }
 
-  changePriceAws(price: number) {
-    this.awsPrice = price;
+  changePriceAws(instance: any) {
+    this.awsPrice = instance.price_per_hour;
+    this.awsInformation = instance;
   }
 
   changeSizeAws(size: number) {
     this.awsSize = size;
   }
 
-  changePriceGcp(price: number) {
-    this.gcpPrice = price;
+  changePriceGcp(instance: any) {
+    this.gcpPrice = instance.price_per_hour;
+    this.gcpInformation = instance;
   }
 
   changeSizeGcp(size: number) {
     this.gcpSize = size;
   }
 
-  changePriceAzure(price: number) {
-    this.azurePrice = price;
+  changePriceAzure(instance: any) {
+    this.azurePrice = instance.price_per_hour;
+    this.azureInformation = instance;
   }
 
   changeSizeAzure(size: number) {
@@ -70,19 +71,19 @@ export class HomeComponent {
     if (this.selectedProviderB != null) {
       this.request.providerB = this.selectedProviderB;
     }
-    if (this.selectedProviderA == "AWS"){
+    if (this.selectedProviderA == "AWS") {
       this.request.priceA = this.awsPrice;
-    }else if (this.selectedProviderA == "GCP"){
+    } else if (this.selectedProviderA == "GCP") {
       this.request.priceA = this.gcpPrice;
-    }else{
+    } else {
       this.request.priceA = this.azurePrice;
     }
 
-    if (this.selectedProviderB == "AWS"){
+    if (this.selectedProviderB == "AWS") {
       this.request.priceB = this.awsPrice;
-    }else if (this.selectedProviderB == "GCP"){
+    } else if (this.selectedProviderB == "GCP") {
       this.request.priceB = this.gcpPrice;
-    }else{
+    } else {
       this.request.priceB = this.azurePrice;
     }
 

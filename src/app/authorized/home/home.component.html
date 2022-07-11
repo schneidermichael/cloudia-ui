@@ -11,8 +11,8 @@
             <div class="grid grid-cols-1 pt-2">
               <select id="provider-a" [(ngModel)]="selectedProviderA"
                       class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-                <option *ngFor="let o of optionsProviderA">
-                  {{o.name}}
+                <option *ngFor="let option of optionsProvider">
+                  {{option.name}}
                 </option>
               </select>
             </div>
@@ -20,21 +20,21 @@
 
           <div *ngIf="selectedProviderA === 'AWS'">
             <app-aws-elastic-computing-cloud
-              (pricePerHourEvent)="changePriceAws($event)"
+              (instanceEvent)="changePriceAws($event)"
               (storageSizeEvent)="changeSizeAws($event)">
             </app-aws-elastic-computing-cloud>
           </div>
 
           <div *ngIf="selectedProviderA === 'GCP'">
             <app-gcp-compute-engine
-              (pricePerHourEvent)="changePriceGcp($event)"
+              (machineEvent)="changePriceGcp($event)"
               (storageSizeEvent)="changeSizeGcp($event)">
             </app-gcp-compute-engine>
           </div>
 
           <div *ngIf="selectedProviderA === 'Azure'">
             <app-azure-virtual-machine
-              (pricePerHourEvent)="changePriceAzure($event)"
+              (instanceEvent)="changePriceAzure($event)"
               (storageSizeEvent)="changeSizeAzure($event)">
             </app-azure-virtual-machine>
           </div>
@@ -51,8 +51,8 @@
             <div class="grid grid-cols-1 pt-2">
               <select id="provider-b" [(ngModel)]="selectedProviderB"
                       class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-                <option *ngFor="let optionB of optionsProviderB">
-                  {{optionB.name}}
+                <option *ngFor="let option of optionsProvider">
+                  {{option.name}}
                 </option>
               </select>
             </div>
@@ -60,21 +60,21 @@
 
           <div *ngIf="selectedProviderB === 'AWS'">
             <app-aws-elastic-computing-cloud
-              (pricePerHourEvent)="changePriceAws($event)"
+              (instanceEvent)="changePriceAws($event)"
               (storageSizeEvent)="changeSizeAws($event)">
             </app-aws-elastic-computing-cloud>
           </div>
 
           <div *ngIf="selectedProviderB === 'GCP'">
             <app-gcp-compute-engine
-              (pricePerHourEvent)="changePriceGcp($event)"
+              (machineEvent)="changePriceGcp($event)"
               (storageSizeEvent)="changeSizeGcp($event)">
             </app-gcp-compute-engine>
           </div>
 
           <div *ngIf="selectedProviderB === 'Azure'">
             <app-azure-virtual-machine
-              (pricePerHourEvent)="changePriceAzure($event)"
+              (instanceEvent)="changePriceAzure($event)"
               (storageSizeEvent)="changeSizeAzure($event)">
             </app-azure-virtual-machine>
           </div>
@@ -92,21 +92,24 @@
             <div *ngIf="selectedProviderA === 'AWS'">
               <app-aws-elastic-computing-cloud-calculate
                 [priceInDollar]="awsPrice"
-                [sizeInGigabyte]="awsSize">
+                [sizeInGigabyte]="awsSize"
+                [information]="awsInformation">
               </app-aws-elastic-computing-cloud-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'GCP'">
               <app-gcp-compute-engine-calculate
                 [priceInDollar]="gcpPrice"
-                [sizeInGigabyte]="gcpSize">
+                [sizeInGigabyte]="gcpSize"
+                [information]="gcpInformation">
               </app-gcp-compute-engine-calculate>
             </div>
 
             <div *ngIf="selectedProviderA === 'Azure'">
               <app-azure-virtual-machine-calculate
                 [priceInDollar]="azurePrice"
-                [sizeInGigabyte]="azureSize">
+                [sizeInGigabyte]="azureSize"
+                [information]="azureInformation">
               </app-azure-virtual-machine-calculate>
             </div>
 
@@ -116,21 +119,24 @@
             <div *ngIf="selectedProviderB === 'AWS'">
               <app-aws-elastic-computing-cloud-calculate
                 [priceInDollar]="awsPrice"
-                [sizeInGigabyte]="awsSize">
+                [sizeInGigabyte]="awsSize"
+                [information]="awsInformation">
               </app-aws-elastic-computing-cloud-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'GCP'">
               <app-gcp-compute-engine-calculate
                 [priceInDollar]="gcpPrice"
-                [sizeInGigabyte]="gcpSize">
+                [sizeInGigabyte]="gcpSize"
+                [information]="gcpInformation">
               </app-gcp-compute-engine-calculate>
             </div>
 
             <div *ngIf="selectedProviderB === 'Azure'">
               <app-azure-virtual-machine-calculate
                 [priceInDollar]="azurePrice"
-                [sizeInGigabyte]="azureSize">
+                [sizeInGigabyte]="azureSize"
+                [information]="azureInformation">
               </app-azure-virtual-machine-calculate>
             </div>
 

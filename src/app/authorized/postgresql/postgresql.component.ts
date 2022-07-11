@@ -11,28 +11,26 @@ import {HistoryService} from "../../shared/service/history.service";
 export class PostgresqlComponent {
 
   request = {} as CreateHistoryRequest;
-  selectedProviderA : string | undefined;
-  selectedProviderB : string | undefined;
+  selectedProviderA = "GCP";
+  selectedProviderB = "Azure";
 
-  optionsProviderA = [
-    { name: "AWS", value: 1 },
-    { name: "GCP", value: 2 },
-    { name: "Azure", value: 3 }
+  optionsProvider = [
+    { name: "AWS"},
+    { name: "GCP" },
+    { name: "Azure" }
   ]
 
-  optionsProviderB = [
-    { name: "AWS", value: 1 },
-    { name: "GCP", value: 2 },
-    { name: "Azure", value: 3 }
-  ]
 
   awsPricePerHour = 0;
   awsPricePerGb = 0
   awsSize  = 0;
+  awsInformation = 0;
+
 
   azurePricePerHour = 0;
   azurePricePerGb = 0
   azureSize  = 0;
+  azureInformation = 0;
 
   gcpPricePerCpu = 0;
   gcpPricePerRam  = 0;
@@ -47,6 +45,7 @@ export class PostgresqlComponent {
   changeInstanceAws(instance: any) {
     this.awsPricePerHour = instance.price_per_hour;
     this.awsPricePerGb = instance.price_per_gib;
+    this.awsInformation = instance;
   }
 
   changeSizeAws(size: number) {
@@ -56,6 +55,7 @@ export class PostgresqlComponent {
   changeInstanceAzure(instance: any) {
     this.azurePricePerHour = instance.price_per_hour;
     this.azurePricePerGb = instance.price_per_gib;
+    this.azureInformation = instance;
   }
 
   changeSizeAzure(size: number) {

@@ -1,10 +1,10 @@
 export interface History {
   id: number,
-  userId: number,
-  createdAt: Date,
+  user_id: number,
+  created_at: Date,
   type: string,
-  providerA: string,
-  providerB: string
-  priceA: number,
-  priceB: number
+  provider_a: string,
+  provider_b: string
+  price_a: number,
+  price_b: number
 }

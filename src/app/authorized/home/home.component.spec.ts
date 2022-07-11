@@ -12,7 +12,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports : [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule ],
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent,  ]
     })
     .compileComponents();
   });
