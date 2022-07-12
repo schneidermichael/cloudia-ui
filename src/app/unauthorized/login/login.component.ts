@@ -17,7 +17,7 @@ export class LoginComponent {
     private router: Router) {
 
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ['', Validators.required]
     });
   }
@@ -26,7 +26,7 @@ export class LoginComponent {
 
     const formValue = this.loginForm.value;
 
-    if (formValue.email && formValue.password) {
+    if (this.loginForm.status == "VALID") {
       this.authenticationService.login(formValue.email, formValue.password)
         .subscribe( (response: any) => {
           this.authenticationService.setToken(response['access_token']);
@@ -36,5 +36,6 @@ export class LoginComponent {
   }
 
   get email() { return this.loginForm.get('email') as FormControl; }
+  get password() { return this.loginForm.get('password') as FormControl; }
 
 }

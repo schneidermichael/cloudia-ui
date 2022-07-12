@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LostPasswordSuccessComponent } from './lost-password-success.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('LostPasswordSuccessComponent', () => {
   let component: LostPasswordSuccessComponent;
@@ -8,6 +10,7 @@ describe('LostPasswordSuccessComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports : [HttpClientTestingModule, RouterTestingModule],
       declarations: [ LostPasswordSuccessComponent ]
     })
     .compileComponents();

@@ -25,11 +25,7 @@ export class LostPasswordComponent {
   lostPassword() {
     if (this.formLostPassword.status == "VALID") {
       this.authenticationService.lostPassword(this.formLostPassword.value.email)
-        .subscribe(value => {
-            this.router.navigate(['/lost-password-success', value.password])
-          }
-
-        );
+        .subscribe(value => this.router.navigate(['/lost-password-success', value.password]),)
     }
   }
 

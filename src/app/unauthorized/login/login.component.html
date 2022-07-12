@@ -15,7 +15,12 @@
             <label for="email"
                    class="absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-emerald-600 peer-focus:text-emerald-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Email
               address</label>
-
+            <div *ngIf="(email.invalid && email.touched) || email.dirty">
+              <small *ngIf="email.errors?.['required']" class="bg-white text-red-700" role="alert">Email is empty, but
+                is required</small>
+              <small *ngIf="email.errors?.['pattern']" class="bg-white text-red-700" role="alert">Please provide a valid
+                email address</small>
+            </div>
           </div>
 
           <div class="relative col-span-6 sm:col-span-6">
@@ -25,6 +30,10 @@
                    placeholder=" "/>
             <label for="password"
                    class="absolute text-sm text-gray-500 text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-emerald-600 peer-focus:text-emerald-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Password</label>
+            <div *ngIf="(password.invalid && password.touched) || email.dirty">
+              <small *ngIf="password.errors?.['required']" class="bg-white text-red-700" role="alert">Password is empty, but
+                is required</small>
+            </div>
           </div>
 
           <div class="relative col-span-6 sm:col-span-6 bottom-6">
