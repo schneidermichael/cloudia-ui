@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Confirmation} from 'src/app/shared/model/confirmation.model';
 import {AuthenticationService} from 'src/app/shared/service/authentication.service';
 
 @Component({
@@ -10,8 +9,6 @@ import {AuthenticationService} from 'src/app/shared/service/authentication.servi
 export class RegisterSuccessComponent implements OnInit {
 
   token: string | undefined | null;
-  returnString: Confirmation | undefined | null;
-
 
   constructor(
     private route: ActivatedRoute,

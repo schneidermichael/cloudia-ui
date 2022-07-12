@@ -1,46 +1,84 @@
 <div class="flex items-center justify-center h-screen">
   <div class="mt-10 sm:mt-0">
 
-            <h2 class=" text-2xl text-center leading-7 text-gray-900 sm:text-3xl sm:truncate">Create your Cloudia account</h2>
+    <h2 class=" text-2xl text-center leading-7 text-gray-900 sm:text-3xl sm:truncate">Create your Cloudia account</h2>
 
-            <form [formGroup]="registerForm">
-                <div class="px-4 py-5 bg-white sm:p-6">
-                  <div class="grid grid-cols-6 gap-6">
+    <form [formGroup]="registerForm">
+      <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-6 gap-6">
 
-                    <div class="col-span-6 sm:col-span-3">
-                      <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="First name" formControlName="firstName"  class="mt-1 h-12 px-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                    </div>
-
-                    <div class="col-span-6 sm:col-span-3">
-                      <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Last name" formControlName="lastName"  class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                    </div>
-
-                    <div class="col-span-6 sm:col-span-6">
-                      <input type="email" name="email-address" id="email-address" autocomplete="email" placeholder="Email address" formControlName="email"  class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                    </div>
-
-                    <div class="col-span-6 sm:col-span-6">
-                        <input type="password" name="password" id="password-address" autocomplete="new-password" placeholder="Password" formControlName="password"  class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                      </div>
-
-                    <div class="col-span-6 sm:col-span-6">
-                      <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                      <select id="country" name="country" autocomplete="country-name" formControlName="national" class="mt-1 h-12 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>Mexico</option>
-                        <option>Austria</option>
-                      </select>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="px-4 py-3 sm:px-6">
-                    <button (click)="register()" class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">Create account</button>
-                </div>
-                <div class="px-4 py-3 sm:px-6">
-                    <button routerLink="/login" class="w-full h-12 px-5 text-black transition-colors duration-150 border border-emerald-500 rounded-lg focus:shadow-outline ">Already have an account?</button>
-                </div>
-            </form>
+          <div class="col-span-6 sm:col-span-3">
+            <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="First name"
+                   formControlName="firstName"
+                   class="mt-1 h-12 px-3 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <div *ngIf="(firstName.invalid && firstName.touched) || firstName.dirty">
+              <small *ngIf="firstName.errors?.['required']" class="bg-white text-red-700" role="alert">First name is
+                empty, but is required</small>
+              <small *ngIf="firstName.errors?.['pattern']" class="bg-white text-red-700" role="alert">Only letters are
+                allowed</small>
+            </div>
           </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Last name"
+                   formControlName="lastName"
+                   class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <div *ngIf="(lastName.invalid && lastName.touched) || lastName.dirty">
+              <small *ngIf="lastName.errors?.['required']" class="bg-white text-red-700" role="alert">Last name is
+                empty, but is required</small>
+              <small *ngIf="lastName.errors?.['pattern']" class="bg-white text-red-700" role="alert">Only letters are
+                allowed</small>
+            </div>
+          </div>
+
+          <div class="col-span-6 sm:col-span-6">
+            <input type="email" name="email" id="email" autocomplete="email" placeholder="Email address"
+                   formControlName="email"
+                   class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <div *ngIf="(email.invalid && email.touched) || email.dirty">
+              <small *ngIf="email.errors?.['required']" class="bg-white text-red-700" role="alert">Email is empty, but
+                is required</small>
+              <small *ngIf="email.errors?.['pattern']" class="bg-white text-red-700" role="alert">Please provide a valid
+                email address</small>
+            </div>
+          </div>
+
+          <div class="col-span-6 sm:col-span-6">
+            <input type="password" name="password" id="password-address" autocomplete="new-password"
+                   placeholder="Password" formControlName="password"
+                   class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <div *ngIf="(password.invalid && password.touched) || password.dirty">
+              <small *ngIf="password.errors?.['required']" class="bg-white text-red-700" role="alert">Password is empty, but
+                is required</small>
+              <small *ngIf="password.errors?.['minlength']" class="bg-white text-red-700" role="alert">Please provide a valid
+                password with at least 8 characters</small>
+            </div>
+          </div>
+
+          <div class="col-span-6 sm:col-span-6">
+            <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+            <select id="country" name="country" autocomplete="country-name" formControlName="national"
+                    class="mt-1 h-12 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+              <option *ngFor="let country of countries">
+                {{country.name}}
+              </option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div class="px-4 py-3 sm:px-6">
+        <button (click)="register()"
+                class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
+          Create account
+        </button>
+      </div>
+      <div class="px-4 py-3 sm:px-6">
+        <button routerLink="/login"
+                class="w-full h-12 px-5 text-black transition-colors duration-150 border border-emerald-500 rounded-lg focus:shadow-outline ">
+          Already have an account?
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

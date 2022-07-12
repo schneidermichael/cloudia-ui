@@ -4,6 +4,7 @@ import {environment} from 'src/environments/environment';
 import {User} from '../model/user.model';
 import {Router} from "@angular/router";
 import jwt_decode from "jwt-decode";
+import {Country} from "../interface/country";
 
 
 const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
@@ -14,6 +15,10 @@ const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlenco
 export class AuthenticationService {
 
   constructor(private http: HttpClient, private router: Router) {
+  }
+
+  getCountries(){
+    return this.http.get<Country[]>(`${environment.apiBaseUrl}/country`);
   }
 
   login(email: string, password: string) {
@@ -50,12 +55,14 @@ export class AuthenticationService {
     return authToken !== null;
   }
 
-  register(_firstName: string, _lastName: string, email: string, password: string, _national: string) {
+  register(firstName: string, lastName: string, email: string, password: string, national: string) {
+    console.log(national);
     const body = new HttpParams()
-      .set(`firstName`, _firstName)
-      .set(`lastName`, _lastName)
+      .set(`first_name`, firstName)
+      .set(`last_name`, lastName)
       .set(`email`, email)
-      .set(`password`, password);
+      .set(`password`, password)
+      .set(`country_name`, national);
 
     return this.http.post<User>(`${environment.apiBaseUrl}/authentication/register`, body, {headers});
   }
