@@ -15,6 +15,7 @@ import {HistoryComponent} from "./authorized/history/history.component";
 import {PostgresqlComponent} from "./authorized/postgresql/postgresql.component";
 import {FreemiumComponent} from "./unauthorized/freemium/freemium.component";
 import {ChartComponent} from "./authorized/chart/chart.component";
+import {LostPasswordSuccessComponent} from "./unauthorized/lost-password-success/lost-password-success.component";
 
 const routes: Routes = [
 
@@ -25,7 +26,9 @@ const routes: Routes = [
   {path: 'register', title: 'Register',component: RegisterComponent},
   {path: 'success', component: RegisterSuccessComponent},
   {path: 'lost-password', component: LostPasswordComponent},
+  {path: 'lost-password-success/:id', component: LostPasswordSuccessComponent},
   {path: 'resend-registration', component: ResendRegistrationComponent},
+
 
   //Autorized
   {

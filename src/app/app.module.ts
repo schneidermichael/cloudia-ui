@@ -38,6 +38,7 @@ import { GcpCloudSqlCalculateComponent } from './child-component/gcp-cloud-sql-c
 import { AzurePostgresqlCalculateComponent } from './child-component/azure-postgresql-calculate/azure-postgresql-calculate.component';
 import { ChartComponent } from './authorized/chart/chart.component';
 import {NgChartsModule} from "ng2-charts";
+import { LostPasswordSuccessComponent } from './unauthorized/lost-password-success/lost-password-success.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import {NgChartsModule} from "ng2-charts";
     AwsRelationalDatabaseCalculateComponent,
     GcpCloudSqlCalculateComponent,
     AzurePostgresqlCalculateComponent,
-    ChartComponent
+    ChartComponent,
+    LostPasswordSuccessComponent
   ],
   imports: [
     BrowserModule,

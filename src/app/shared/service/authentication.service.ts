@@ -1,7 +1,6 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
-import {User} from '../model/user.model';
 import {Router} from "@angular/router";
 import jwt_decode from "jwt-decode";
 import {Country} from "../interface/country";
@@ -56,7 +55,6 @@ export class AuthenticationService {
   }
 
   register(firstName: string, lastName: string, email: string, password: string, national: string) {
-    console.log(national);
     const body = new HttpParams()
       .set(`first_name`, firstName)
       .set(`last_name`, lastName)
@@ -64,16 +62,16 @@ export class AuthenticationService {
       .set(`password`, password)
       .set(`country_name`, national);
 
-    return this.http.post<User>(`${environment.apiBaseUrl}/authentication/register`, body, {headers});
+    return this.http.post<any>(`${environment.apiBaseUrl}/authentication/register`, body, {headers});
   }
 
   confirm(_token:string){
     return this.http.get<any>(`${environment.apiBaseUrl}/authentication/confirm?token=`+_token, {headers});
   }
 
-  lostPassword(_email: string) {
-
-    return;
+  lostPassword(email: string) {
+    const body = new HttpParams().set(`email`, email);
+    return this.http.post<any>(`${environment.apiBaseUrl}/authentication/reset-password`,body, {headers});
   }
 
   resendRegistration(_email: string) {

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ProfileService} from "../../shared/service/profile.service";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../../shared/service/authentication.service";
-import {User} from "../../shared/model/user.model";
+import {User} from "../../shared/interface/user";
 
 @Component({
   selector: 'app-profile',

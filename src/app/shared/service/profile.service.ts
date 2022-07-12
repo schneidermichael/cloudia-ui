@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {User} from "../model/user.model";
 import {environment} from "../../../environments/environment";
 
 @Injectable({
@@ -11,7 +10,7 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
 
   getProfile() {
-    return this.http.get<User>(`${environment.apiBaseUrl}/user/profile`);
+    return this.http.get<any>(`${environment.apiBaseUrl}/user/profile`);
   }
 
   deleteProfile(id: number | undefined){
