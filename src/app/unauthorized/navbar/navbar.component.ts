@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent {
 
+  language : boolean = true;
 
   constructor(public authenticationService: AuthenticationService, private router: Router) {
   }
@@ -17,4 +18,11 @@ export class NavbarComponent {
     this.router.navigateByUrl('/login');
   }
 
+  changeToGerman() {
+    this.language = false;
+  }
+
+  changeToEnglish(){
+    this.language = true;
+  }
 }

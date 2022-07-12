@@ -69,6 +69,16 @@
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
+        <div i18n class="ml-3 relative" *ngIf="language">
+          <button (click)="changeToGerman()" routerLink="/at/" class="text-black px-3 py-2 rounded-md text-sm font-medium"><img src="../../../assets/germany.png" alt="German">
+          </button>
+        </div>
+
+        <div i18n class="ml-3 relative" *ngIf="!language">
+          <button (click)="changeToEnglish()" routerLink="/" class="text-black px-3 py-2 rounded-md text-sm font-medium"><img src="../../../assets/great-britain.png" alt="English">
+          </button>
+        </div>
+
         <div i18n class="ml-3 relative" *ngIf="!this.authenticationService.isLoggedIn">
           <button routerLink="/login" class="bg-gray-100 text-black px-3 py-2 rounded-md text-sm font-medium">Log in
           </button>
