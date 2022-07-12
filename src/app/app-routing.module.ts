@@ -18,11 +18,11 @@ import {ChartComponent} from "./authorized/chart/chart.component";
 
 const routes: Routes = [
 
-  {path: '', component: FeaturesComponent},
-  {path: 'help', component: HelpComponent},
-  {path: 'freemium', component: FreemiumComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: '', title: 'Features', component: FeaturesComponent},
+  {path: 'help', title: 'Help', component: HelpComponent},
+  {path: 'freemium', title: 'Freemium', component: FreemiumComponent},
+  {path: 'login', title: 'Login', component: LoginComponent},
+  {path: 'register', title: 'Register',component: RegisterComponent},
   {path: 'success', component: RegisterSuccessComponent},
   {path: 'lost-password', component: LostPasswordComponent},
   {path: 'resend-registration', component: ResendRegistrationComponent},
@@ -30,30 +30,35 @@ const routes: Routes = [
   //Autorized
   {
     path: 'home',
+    title: 'Compare Virtual Machines',
     component: HomeComponent,
     canActivate: [AuthenticationGuard]
   },
   {
     path: 'profile',
+    title: 'Profile',
     component: ProfileComponent,
     canActivate: [AuthenticationGuard]
   },
   {
     path: 'postgresql',
+    title: 'Compare PostgreSQL Databases',
     component: PostgresqlComponent,
     canActivate: [AuthenticationGuard]
   },
   {
     path: 'history',
+    title: 'History',
     component: HistoryComponent,
     canActivate: [AuthenticationGuard]
   },
   {
     path: 'chart/:id',
+    title: 'Chart',
     component: ChartComponent,
     canActivate: [AuthenticationGuard]
   },
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', title: 'Page not found',component: PageNotFoundComponent}
 ];
 
 @NgModule({
