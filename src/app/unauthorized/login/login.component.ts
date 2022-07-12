@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../shared/service/authentication.service';
 
@@ -34,4 +34,7 @@ export class LoginComponent {
         });
     }
   }
+
+  get email() { return this.loginForm.get('email') as FormControl; }
+
 }

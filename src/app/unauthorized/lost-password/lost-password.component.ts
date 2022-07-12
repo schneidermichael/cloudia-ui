@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../shared/service/authentication.service';
 
@@ -17,16 +17,14 @@ export class LostPasswordComponent {
     private router: Router) {
 
     this.formLostPassword = this.formBuilder.group({
-      email: ['', Validators.required]
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]
     });
 
   }
 
   lostPassword() {
 
-    const formValue = this.formLostPassword.value;
-
-    if (formValue.email) {
+    if (this.formLostPassword.status == "VALID") {
       return this.router.navigateByUrl('success');
       // this.authenticationService.lostPassword(formValue.email)
       //   .subscribe(
@@ -37,9 +35,11 @@ export class LostPasswordComponent {
       //     }
       //   );
     }
-    return this.router.navigateByUrl('success');
-
+    return ;
   }
+
+  get email() { return this.formLostPassword.get('email') as FormControl; }
+
 
 
 }
