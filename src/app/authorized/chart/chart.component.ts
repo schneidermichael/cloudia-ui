@@ -61,9 +61,9 @@ export class ChartComponent implements OnInit{
     this.routeSub = this.route.params.subscribe(params => {
       this.service.findOne(params['id']).subscribe(value => {
         // @ts-ignore
-        const map1 = this.dataProviderA.map(x => parseInt(x * value.price_a * 730));
+        const map1 = this.dataProviderA.map(x => parseInt(x * value.price_a));
         // @ts-ignore
-        const map2 = this.dataProviderB.map(x => parseInt(x * value.price_b * 730));
+        const map2 = this.dataProviderB.map(x => parseInt(x * value.price_b));
 
         this.barChartData.datasets[0].data = map1
         this.barChartData.datasets[1].data = map2

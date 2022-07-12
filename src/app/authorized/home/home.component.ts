@@ -72,19 +72,19 @@ export class HomeComponent {
       this.request.providerB = this.selectedProviderB;
     }
     if (this.selectedProviderA == "AWS") {
-      this.request.priceA = this.awsPrice;
+      this.request.priceA = this.awsPrice * 730 + this.awsSize * 0.1;
     } else if (this.selectedProviderA == "GCP") {
-      this.request.priceA = this.gcpPrice;
+      this.request.priceA = this.gcpPrice * 730 + this.gcpSize * 0.1;
     } else {
-      this.request.priceA = this.azurePrice;
+      this.request.priceA = this.azurePrice * 730 + this.azureSize * 0.1;
     }
 
     if (this.selectedProviderB == "AWS") {
-      this.request.priceB = this.awsPrice;
+      this.request.priceB = this.awsPrice * 730 + this.awsSize * 0.1;
     } else if (this.selectedProviderB == "GCP") {
-      this.request.priceB = this.gcpPrice;
+      this.request.priceB = this.gcpPrice * 730 + this.gcpSize * 0.1;
     } else {
-      this.request.priceB = this.azurePrice;
+      this.request.priceB = this.azurePrice * 730 + this.azureSize * 0.1;
     }
 
     this.historyService.create(this.request).subscribe(value => console.log(value));
