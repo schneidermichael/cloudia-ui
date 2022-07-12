@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthenticationService } from '../../shared/service/authentication.service';
+import {Component} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../../shared/service/authentication.service';
 
 @Component({
   selector: 'app-resend-registration',
@@ -17,15 +17,13 @@ export class ResendRegistrationComponent {
     private router: Router) {
 
     this.formResendRegistration = this.formBuilder.group({
-      email: ['', Validators.required]
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]
     });
   }
 
   resendRegistration() {
 
-    const formValue = this.formResendRegistration.value;
-
-    if (formValue.email) {
+    if (this.formResendRegistration.status == "VALID") {
       return this.router.navigateByUrl('success');
       // this.authenticationService.resendRegistration(formValue.email)
       //   .subscribe(
@@ -35,9 +33,10 @@ export class ResendRegistrationComponent {
       //     }
       //   );
     }
-    return this.router.navigateByUrl('success');
+    return;
   }
 
+  get email() { return this.formResendRegistration.get('email') as FormControl; }
 
 
 }
