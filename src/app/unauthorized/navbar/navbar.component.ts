@@ -20,9 +20,11 @@ export class NavbarComponent {
 
   changeToGerman() {
     this.language = false;
+    this.router.navigateByUrl('/at/')
   }
 
   changeToEnglish(){
     this.language = true;
+    this.router.navigateByUrl('/')
   }
 }
