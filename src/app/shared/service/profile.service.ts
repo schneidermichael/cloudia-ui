@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 
 @Injectable({
@@ -15,5 +15,13 @@ export class ProfileService {
 
   deleteProfile(id: number | undefined){
     return this.http.delete(`${environment.apiBaseUrl}/user/profile/${id}`);
+  }
+
+  changePassword(oldPassword: string, newPassword: string){
+    const body = new HttpParams()
+      .set(`oldPassword`, oldPassword)
+      .set(`newPassword`, newPassword);
+
+    return this.http.put(`${environment.apiBaseUrl}/user/change-password`,body);
   }
 }

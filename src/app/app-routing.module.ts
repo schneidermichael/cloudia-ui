@@ -16,6 +16,7 @@ import {PostgresqlComponent} from "./authorized/postgresql/postgresql.component"
 import {FreemiumComponent} from "./unauthorized/freemium/freemium.component";
 import {ChartComponent} from "./authorized/chart/chart.component";
 import {LostPasswordSuccessComponent} from "./unauthorized/lost-password-success/lost-password-success.component";
+import {ChangePasswordComponent} from "./authorized/change-password/change-password.component";
 
 const routes: Routes = [
 
@@ -24,10 +25,10 @@ const routes: Routes = [
   {path: 'freemium', title: 'Freemium', component: FreemiumComponent},
   {path: 'login', title: 'Login', component: LoginComponent},
   {path: 'register', title: 'Register',component: RegisterComponent},
-  {path: 'success', component: RegisterSuccessComponent},
-  {path: 'lost-password', component: LostPasswordComponent},
-  {path: 'lost-password-success/:id', component: LostPasswordSuccessComponent},
-  {path: 'resend-registration', component: ResendRegistrationComponent},
+  {path: 'success', title: 'Successful registration', component: RegisterSuccessComponent},
+  {path: 'lost-password', title: 'Forgot your Password', component: LostPasswordComponent},
+  {path: 'lost-password-success/:id', title: 'Successful resend', component: LostPasswordSuccessComponent},
+  {path: 'resend-registration', title: 'Resend conformation', component: ResendRegistrationComponent},
 
 
   //Autorized
@@ -59,6 +60,12 @@ const routes: Routes = [
     path: 'chart/:id',
     title: 'Chart',
     component: ChartComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'change-password',
+    title: 'Change your password',
+    component: ChangePasswordComponent,
     canActivate: [AuthenticationGuard]
   },
   {path: '**', title: 'Page not found',component: PageNotFoundComponent}

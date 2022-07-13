@@ -39,6 +39,7 @@ import { AzurePostgresqlCalculateComponent } from './child-component/azure-postg
 import { ChartComponent } from './authorized/chart/chart.component';
 import {NgChartsModule} from "ng2-charts";
 import { LostPasswordSuccessComponent } from './unauthorized/lost-password-success/lost-password-success.component';
+import { ChangePasswordComponent } from './authorized/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { LostPasswordSuccessComponent } from './unauthorized/lost-password-succe
     GcpCloudSqlCalculateComponent,
     AzurePostgresqlCalculateComponent,
     ChartComponent,
-    LostPasswordSuccessComponent
+    LostPasswordSuccessComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
