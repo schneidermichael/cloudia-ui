@@ -20,7 +20,6 @@ export class RegisterSuccessComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.token = params['token'];
-      console.error(this.token);
       if (this.token != undefined) {
         this.authenticationService.confirm(this.token)
           .subscribe(confirmation => {

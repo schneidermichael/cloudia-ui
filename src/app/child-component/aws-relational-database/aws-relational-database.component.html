@@ -34,7 +34,7 @@
           <label for="aws-size-price" class="block text-sm font-medium text-gray-700">Price per GB</label>
         </div>
         <div class="grid grid-cols-2 gap-2">
-          <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="aws-size" name="aws-size"
+          <input type="number" oninput="validity.valid||(value='');" min="0" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="aws-size" name="aws-size"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
           <input type="number" [(ngModel)]="selectedPricePerGb" id="aws-size-price" name="aws-size-price"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>

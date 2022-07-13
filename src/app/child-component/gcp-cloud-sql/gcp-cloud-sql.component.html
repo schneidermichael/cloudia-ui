@@ -20,7 +20,7 @@
           <label for="gcp-cpu-price" class="block text-sm font-medium text-gray-700">Price per vCPU</label>
         </div>
         <div class="grid grid-cols-2 gap-2">
-          <input type="number" [(ngModel)]="selectedCpuSize" (ngModelChange)="selectedCpuSizeChanged($event)"id="gcp-cpu" name="gcp-cpu"
+          <input type="number" oninput="validity.valid||(value='');" min="0" [(ngModel)]="selectedCpuSize" (ngModelChange)="selectedCpuSizeChanged($event)"id="gcp-cpu" name="gcp-cpu"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
           <input type="number" [(ngModel)]="selectedCpuSizePerHour" id="gcp-cpu-price" name="gcp-cpu-price"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>
@@ -30,7 +30,7 @@
           <label for="gcp-ram-price" class="block text-sm font-medium text-gray-700">Price per RAM</label>
         </div>
         <div class="grid grid-cols-2 gap-2">
-          <input type="number" [(ngModel)]="selectedRamSize" (ngModelChange)="selectedRamSizeChanged($event)"id="gcp-ram" name="gcp-ram"
+          <input type="number" oninput="validity.valid||(value='');" min="0" [(ngModel)]="selectedRamSize" (ngModelChange)="selectedRamSizeChanged($event)"id="gcp-ram" name="gcp-ram"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
           <input type="number" [(ngModel)]="selectedRamSizePerHour" id="gcp-ram-price" name="gcp-ram-price"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>
@@ -40,7 +40,7 @@
           <label for="gcp-size-price" class="block text-sm font-medium text-gray-700">Price per GB</label>
         </div>
         <div class="grid grid-cols-2  gap-2">
-          <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedSizeChanged($event)"id="gcp-size" name="gcp-size"
+          <input type="number" oninput="validity.valid||(value='');" min="0" [(ngModel)]="selectedSize" (ngModelChange)="selectedSizeChanged($event)"id="gcp-size" name="gcp-size"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
           <input type="number" [(ngModel)]="selectedPricePerGb" id="gcp-size-price" name="gcp-size-price"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm" disabled>

@@ -38,7 +38,7 @@
         </div>
         <div class="grid grid-cols-1 pt-2">
           <label for="azure-size" class="block text-sm font-medium text-gray-700">Size (GB)</label>
-          <input type="number" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="azure-size" name="azure-size"
+          <input type="number" oninput="validity.valid||(value='');" min="0" [(ngModel)]="selectedSize" (ngModelChange)="selectedStorageSizeChanged($event)"id="azure-size" name="azure-size"
                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
         </div>
 
