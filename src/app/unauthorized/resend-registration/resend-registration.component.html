@@ -15,6 +15,7 @@
                 <small *ngIf="email.errors?.['required']" class="bg-white text-red-700" role="alert">Email is empty, but is required</small>
                 <small *ngIf="email.errors?.['pattern']" class="bg-white text-red-700" role="alert">Please provide a valid email address</small>
               </div>
+              <small *ngIf="showError" class="bg-white text-red-700" role="alert">No user found with this email</small>
             </div>
 
           </div>

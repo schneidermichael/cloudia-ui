@@ -25,7 +25,6 @@ export class ChangePasswordComponent {
     const formValue = this.changePasswordForm.value;
 
     if (this.changePasswordForm.status == "VALID") {
-      this.service.changePassword(formValue.oldPassword, formValue.newPassword)
       this.service.changePassword(formValue.oldPassword, formValue.newPassword).subscribe({
         next: (value) => {
           this.showError = false;
@@ -37,7 +36,7 @@ export class ChangePasswordComponent {
           }
           console.error(e);
         },
-        complete: () => console.info('complete')
+        complete: () => console.info('Change Password complete')
       });
     }
 

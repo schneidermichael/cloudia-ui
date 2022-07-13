@@ -9,6 +9,8 @@ import { AuthenticationService } from '../../shared/service/authentication.servi
 })
 export class LoginComponent {
 
+  showError = false;
+
   loginForm: FormGroup;
 
   constructor(
@@ -27,12 +29,23 @@ export class LoginComponent {
     const formValue = this.loginForm.value;
 
     if (this.loginForm.status == "VALID") {
-      this.authenticationService.login(formValue.email, formValue.password)
-        .subscribe( (response: any) => {
+      this.authenticationService.login(formValue.email, formValue.password).subscribe({
+        next: (response) => {
+          this.showError = false;
           this.authenticationService.setToken(response['access_token']);
           this.router.navigateByUrl('home');
-        });
+        },
+        error: (e) => {
+          if (e.error.statusCode === 403){
+            this.showError = true;
+          }
+          console.error(e);
+        },
+        complete: () => console.info('Login complete')
+      });
+
     }
+
   }
 
   get email() { return this.loginForm.get('email') as FormControl; }

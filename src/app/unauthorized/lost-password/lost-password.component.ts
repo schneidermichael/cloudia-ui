@@ -9,6 +9,8 @@ import {AuthenticationService} from '../../shared/service/authentication.service
 })
 export class LostPasswordComponent {
 
+  showError = false;
+
   formLostPassword: FormGroup;
 
   constructor(
@@ -24,9 +26,22 @@ export class LostPasswordComponent {
 
   lostPassword() {
     if (this.formLostPassword.status == "VALID") {
-      this.authenticationService.lostPassword(this.formLostPassword.value.email)
-        .subscribe(value => this.router.navigate(['/lost-password-success', value.password]),)
+      this.authenticationService.lostPassword(this.formLostPassword.value.email).subscribe({
+        next: (value) => {
+          this.showError = false;
+          this.router.navigate(['/lost-password-success', value.password]);
+        },
+        error: (e) => {
+          if (e.error.statusCode === 403){
+            this.showError = true;
+          }
+          console.error(e);
+        },
+        complete: () => console.info('Lost password complete')
+      });
     }
+
+
   }
 
   get email() {

@@ -9,6 +9,8 @@ import {AuthenticationService} from '../../shared/service/authentication.service
 })
 export class ResendRegistrationComponent {
 
+  showError = false;
+
   host = "";
 
   formResendRegistration: FormGroup;
@@ -26,9 +28,22 @@ export class ResendRegistrationComponent {
 
   resendConformation() {
     if (this.formResendRegistration.status == "VALID") {
-      this.authenticationService.resendConformation(this.formResendRegistration.value.email, this.host)
-        .subscribe(() => this.router.navigateByUrl('success'));
+      this.authenticationService.resendConformation(this.formResendRegistration.value.email, this.host).subscribe({
+        next: (response) => {
+          this.showError = false;
+          this.router.navigateByUrl('success')
+        },
+        error: (e) => {
+          if (e.error.statusCode === 403){
+            this.showError = true;
+          }
+          console.error(e);
+        },
+        complete: () => console.info('Resend registration complete')
+      });
     }
+
+
   }
 
   get email() { return this.formResendRegistration.get('email') as FormControl; }

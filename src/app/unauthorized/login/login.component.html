@@ -43,6 +43,7 @@
         </div>
       </div>
       <div class="px-4 py-3 sm:px-6">
+        <small *ngIf="showError" class="bg-white text-red-700" role="alert">Credentials are incorrect. Please try it again</small>
         <button (click)="login()"
                 class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
           Log
