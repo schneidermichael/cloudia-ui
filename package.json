@@ -13,7 +13,7 @@
     "test:coverage": "ng test --code-coverage",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "db:clean": "docker exec $(docker ps | grep cloudia-database | awk '{print $1}') psql -U postgres -d cloudia-db -c 'DELETE FROM \"Users\"; DELETE FROM \"AwsSimple\";'",
+    "db:clean": "docker exec $(docker ps | grep cloudia-database | awk '{print $1}') psql -U postgres -d cloudia-db -c 'DELETE FROM \"User\";'",
     "docker:build": "npm install & ng build --localize && docker build -t cloudia-ui:latest ."
   },
   "private": true,

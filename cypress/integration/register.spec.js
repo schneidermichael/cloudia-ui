@@ -15,7 +15,7 @@ describe('The Sign up Page', () => {
 
     cy.get('input[name=last-name]').type('Mustermann')
 
-    cy.get('input[name=email-address]').type('max.mustermann@email.at')
+    cy.get('input[name=email]').type('max.mustermann@email.at')
 
     cy.get('input[name=password]').type('Mustermann')
 

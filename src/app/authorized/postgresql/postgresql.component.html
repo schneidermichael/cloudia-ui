@@ -6,7 +6,7 @@
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-1">
-              <h3 class="text-2xl">Provider A</h3>
+              <h3 i18n class="text-2xl">Provider A</h3>
             </div>
             <div class="grid grid-cols-1 pt-2">
               <select id="provider-a" [(ngModel)]="selectedProviderA"
@@ -48,7 +48,7 @@
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-1">
-              <h3 class="text-2xl">Provider B</h3>
+              <h3 i18n class="text-2xl">Provider B</h3>
             </div>
             <div class="grid grid-cols-1 pt-2">
               <select id="provider-b" [(ngModel)]="selectedProviderB"
@@ -90,7 +90,7 @@
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-1">
-              <h3 class="text-2xl">Summary</h3>
+              <h3 i18n class="text-2xl">Summary</h3>
             </div>
 
             <div *ngIf="selectedProviderA === 'AWS'">
@@ -157,11 +157,11 @@
             </div>
 
             <div *ngIf="selectedProviderA  && selectedProviderB ">
-              <button (click)="createHistory()"
+              <button i18n (click)="createHistory()"
                       class="w-full h-12 px-5 text-black transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">
                 History
               </button>
-              <small *ngIf="showError" class="bg-white text-red-700" role="alert">Currently the backend is not reachable</small>
+              <small i18n *ngIf="showError" class="bg-white text-red-700" role="alert">Currently the backend is not reachable</small>
             </div>
           </div>
         </div>

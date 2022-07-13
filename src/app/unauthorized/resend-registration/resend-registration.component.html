@@ -8,24 +8,24 @@
           <div class="grid grid-cols-6 gap-6">
 
             <div class="col-span-6 sm:col-span-6">
-              <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+              <label i18n for="email" class="block text-sm font-medium text-gray-700">Email address</label>
               <input type="email" name="email" id="email" autocomplete="email" formControlName="email"
                 class="mt-1 px-3 h-12 focus:ring-emerald-500 focus:border-emerald-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               <div *ngIf="(email.invalid && email.touched) || email.dirty">
-                <small *ngIf="email.errors?.['required']" class="bg-white text-red-700" role="alert">Email is empty, but is required</small>
-                <small *ngIf="email.errors?.['pattern']" class="bg-white text-red-700" role="alert">Please provide a valid email address</small>
+                <small i18n *ngIf="email.errors?.['required']" class="bg-white text-red-700" role="alert">Email is empty, but is required</small>
+                <small i18n *ngIf="email.errors?.['pattern']" class="bg-white text-red-700" role="alert">Please provide a valid email address</small>
               </div>
-              <small *ngIf="showError" class="bg-white text-red-700" role="alert">No user found with this email</small>
+              <small i18n *ngIf="showError" class="bg-white text-red-700" role="alert">No user found with this email</small>
             </div>
 
           </div>
         </div>
         <div class="px-4 py-3 sm:px-6">
-          <button (click)="resendConformation()"
+          <button i18n (click)="resendConformation()"
             class="w-full h-12 px-5 text-black font-bold transition-colors duration-150 bg-[#27d17f] rounded-lg focus:shadow-outline">Resend confirmation email</button>
         </div>
         <div class="px-4 py-3 sm:px-6 content-center text-center">
-          <a routerLink="/login" class=" text-emerald-500">Return to login</a>
+          <a i18n routerLink="/login" class=" text-emerald-500">Return to login</a>
         </div>
 
       </form>

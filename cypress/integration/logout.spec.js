@@ -6,11 +6,11 @@ describe('Logout User', () => {
 
       cy.request({
         method: 'POST',
-        url: 'http://localhost:3000/auth/register', // baseUrl is prepend to URL
+        url: 'http://localhost:3000/authentication/register', // baseUrl is prepend to URL
         form: true, // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers
         body: {
-          eMail: 'test.user@login.at',
-          pwd: Cypress.env('password'),
+          email: 'test.user@login.at',
+          password: Cypress.env('password'),
         },
       })
 
