@@ -10,6 +10,8 @@ import {HistoryService} from "../../shared/service/history.service";
 
 export class PostgresqlComponent {
 
+  showError = false;
+
   request = {} as CreateHistoryRequest;
   selectedProviderA = "GCP";
   selectedProviderB = "Azure";
@@ -105,6 +107,19 @@ export class PostgresqlComponent {
       this.request.priceB = this.azurePricePerHour * 730 + this.azureSize * this.azurePricePerGb;
     }
 
-    this.historyService.create(this.request).subscribe(value => console.log(value));
+    this.historyService.create(this.request).subscribe({
+      next: (v) => {
+        console.log(v);
+        this.showError = false;
+      },
+      error: (e) => {
+        if (e.status === 0){
+          this.showError = true;
+
+        }
+        console.error(e)
+      },
+      complete: () => console.info('complete')
+    });
   }
 }

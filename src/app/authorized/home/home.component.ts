@@ -9,7 +9,6 @@ import {AuthenticationService} from "../../shared/service/authentication.service
 })
 export class HomeComponent {
 
-
   showError = false;
 
   request = {} as CreateHistoryRequest;

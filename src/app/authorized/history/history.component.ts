@@ -10,10 +10,24 @@ import {History} from "../../shared/interface/history";
 
 export class HistoryComponent {
 
+  showError = false;
+
   data: History[] | undefined;
 
   constructor(private historyService: HistoryService, private authenticationService: AuthenticationService) {
-    this.historyService.findAllByUserId(this.authenticationService.getUserId()).subscribe(value => this.data = value)
+    this.historyService.findAllByUserId(this.authenticationService.getUserId()).subscribe({
+    next: (value) => {
+      this.data = value
+      this.showError = false;
+    },
+      error: (e) => {
+      if (e.status === 0){
+        this.showError = true;
+      }
+      console.error(e)
+    },
+      complete: () => console.info('complete')
+  });
   }
 
   chart(id: number) {

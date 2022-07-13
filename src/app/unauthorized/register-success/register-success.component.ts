@@ -24,7 +24,6 @@ export class RegisterSuccessComponent implements OnInit {
       if (this.token != undefined) {
         this.authenticationService.confirm(this.token)
           .subscribe(confirmation => {
-            console.error(confirmation.status);
             if (confirmation.status == "isActivated") {
               this.router.navigateByUrl('login')
             }
