@@ -63,6 +63,9 @@
                 {{country.name}}
               </option>
             </select>
+            <div *ngIf="(national.invalid && national.touched) || national.dirty">
+              <small *ngIf="national.errors?.['required']" class="bg-white text-red-700" role="alert">Select a country</small>
+            </div>
           </div>
 
         </div>

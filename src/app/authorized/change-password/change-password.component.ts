@@ -9,6 +9,8 @@ import {Router} from "@angular/router";
 })
 export class ChangePasswordComponent {
 
+  showError = false;
+
   changePasswordForm: FormGroup;
 
   constructor( private formBuilder: FormBuilder, private service: ProfileService, private router: Router) {
@@ -24,8 +26,21 @@ export class ChangePasswordComponent {
 
     if (this.changePasswordForm.status == "VALID") {
       this.service.changePassword(formValue.oldPassword, formValue.newPassword)
-        .subscribe(() => this.router.navigateByUrl('profile'));
+      this.service.changePassword(formValue.oldPassword, formValue.newPassword).subscribe({
+        next: (value) => {
+          this.showError = false;
+          this.router.navigateByUrl('profile');
+        },
+        error: (e) => {
+          if (e.error.statusCode === 403){
+            this.showError = true;
+          }
+          console.error(e);
+        },
+        complete: () => console.info('complete')
+      });
     }
+
   }
 
   get oldPassword() { return this.changePasswordForm.get('oldPassword') as FormControl; }
