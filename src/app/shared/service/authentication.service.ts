@@ -1,9 +1,10 @@
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {Router} from "@angular/router";
 import jwt_decode from "jwt-decode";
 import {Country} from "../interface/country";
+import {throwError} from "rxjs";
 
 
 const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
@@ -78,4 +79,5 @@ export class AuthenticationService {
 
     return;
   }
+
 }

@@ -10,6 +10,8 @@ import {AuthenticationService} from "../../shared/service/authentication.service
 export class HomeComponent {
 
 
+  showError = false;
+
   request = {} as CreateHistoryRequest;
   selectedProviderA = "AWS";
   selectedProviderB = "GCP";
@@ -87,7 +89,20 @@ export class HomeComponent {
       this.request.priceB = this.azurePrice * 730 + this.azureSize * 0.1;
     }
 
-    this.historyService.create(this.request).subscribe(value => console.log(value));
-  }
+    this.historyService.create(this.request).subscribe({
+      next: (value) => {
+        console.log(value);
+        this.showError = false;
+      },
+      error: (e) => {
+        if (e.status === 0){
+          this.showError = true;
 
+        }
+        console.error(e)
+      },
+      complete: () => console.info('complete')
+    });
+
+  }
 }
