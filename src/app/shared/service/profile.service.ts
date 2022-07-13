@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
+import {from} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,15 @@ export class ProfileService {
       .set(`newPassword`, newPassword);
 
     return this.http.put(`${environment.apiBaseUrl}/user/change-password`,body);
+  }
+
+  updateProfile(id: number, firstName: string, lastName: string, email: string) {
+    console.log(firstName);
+    const body = new HttpParams()
+      .set(`first_name`, firstName)
+      .set(`last_name`, lastName)
+      .set(`email`, email);
+    return this.http.put(`${environment.apiBaseUrl}/user/profile/${id}`,body);
+
   }
 }
