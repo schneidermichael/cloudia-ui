@@ -36,7 +36,7 @@ describe('ResendRegistrationComponent', () => {
   });
 
   it('should resendRegistration', () => {
-    component.resendRegistration();
+    component.resendConformation();
     expect().nothing();
   });
 

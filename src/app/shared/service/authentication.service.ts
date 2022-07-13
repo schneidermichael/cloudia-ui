@@ -13,8 +13,7 @@ const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlenco
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient, private router: Router) {
-  }
+  constructor(private http: HttpClient, private router: Router) {}
 
   getCountries(){
     return this.http.get<Country[]>(`${environment.apiBaseUrl}/country`);
@@ -54,13 +53,14 @@ export class AuthenticationService {
     return authToken !== null;
   }
 
-  register(firstName: string, lastName: string, email: string, password: string, national: string) {
+  register(firstName: string, lastName: string, email: string, password: string, national: string, host: string ) {
     const body = new HttpParams()
       .set(`first_name`, firstName)
       .set(`last_name`, lastName)
       .set(`email`, email)
       .set(`password`, password)
-      .set(`country_name`, national);
+      .set(`country_name`, national)
+      .set(`host`, host);
     return this.http.post<any>(`${environment.apiBaseUrl}/authentication/register`, body, {headers});
   }
 
@@ -73,8 +73,8 @@ export class AuthenticationService {
     return this.http.post<any>(`${environment.apiBaseUrl}/authentication/reset-password`,body, {headers});
   }
 
-  resendRegistration(email: string) {
-    const body = new HttpParams().set(`email`, email);
+  resendConformation(email: string, host: string) {
+    const body = new HttpParams().set(`email`, email).set(`host`, host);
     return this.http.post<any>(`${environment.apiBaseUrl}/authentication/resend-conformation`,body, {headers});
   }
 

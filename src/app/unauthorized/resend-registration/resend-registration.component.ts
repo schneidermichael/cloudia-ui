@@ -9,6 +9,8 @@ import {AuthenticationService} from '../../shared/service/authentication.service
 })
 export class ResendRegistrationComponent {
 
+  host = "";
+
   formResendRegistration: FormGroup;
 
   constructor(
@@ -19,11 +21,12 @@ export class ResendRegistrationComponent {
     this.formResendRegistration = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]
     });
+    this.host = window.location.host
   }
 
-  resendRegistration() {
+  resendConformation() {
     if (this.formResendRegistration.status == "VALID") {
-      this.authenticationService.resendRegistration(this.formResendRegistration.value.email)
+      this.authenticationService.resendConformation(this.formResendRegistration.value.email, this.host)
         .subscribe(() => this.router.navigateByUrl('success'));
     }
   }

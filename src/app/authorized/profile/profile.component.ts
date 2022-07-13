@@ -23,6 +23,8 @@ export class ProfileComponent {
       this.user.password = response['password'];
       this.user.country = response['country_name']
     });
+
+
   }
 
   delete() {

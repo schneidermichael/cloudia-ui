@@ -10,6 +10,8 @@ import {Country} from "../../shared/interface/country";
 })
 export class RegisterComponent {
 
+  host = "";
+
   countries : Country[] | undefined;
   registerForm: FormGroup;
 
@@ -26,6 +28,7 @@ export class RegisterComponent {
       national: ['', Validators.required]
     });
     this.authenticationService.getCountries().subscribe(value => this.countries = value)
+    this.host = window.location.host
   }
 
 
@@ -34,7 +37,7 @@ export class RegisterComponent {
     const formValue = this.registerForm.value;
 
     if (this.registerForm.status == "VALID") {
-      this.authenticationService.register(formValue.firstName, formValue.lastName, formValue.email, formValue.password, formValue.national)
+      this.authenticationService.register(formValue.firstName, formValue.lastName, formValue.email, formValue.password, formValue.national, this.host)
         .subscribe(() => this.router.navigateByUrl('success'));
     }
 

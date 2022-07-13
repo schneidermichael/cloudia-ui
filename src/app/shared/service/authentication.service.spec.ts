@@ -34,7 +34,7 @@ describe('AuthenticationService', () => {
   });
 
   it('should register', () => {
-    service.register("","","","","");
+    service.register("", "", "", "", "");
     expect().nothing();
   });
 
@@ -44,7 +44,7 @@ describe('AuthenticationService', () => {
   });
 
   it('should lostPassword', () => {
-    service.resendRegistration("");
+    service.resendConformation("");
     expect().nothing();
   });
 
