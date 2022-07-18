@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AwsRelationalDatabaseComponent } from './aws-relational-database.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 describe('AwsRelationalDatabaseComponent', () => {
   let component: AwsRelationalDatabaseComponent;
@@ -9,7 +10,7 @@ describe('AwsRelationalDatabaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule],
+      imports : [HttpClientTestingModule,ReactiveFormsModule, FormsModule,],
       declarations: [ AwsRelationalDatabaseComponent ]
     })
     .compileComponents();

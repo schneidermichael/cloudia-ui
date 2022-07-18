@@ -26,7 +26,7 @@ export class HistoryComponent {
       }
       console.error(e)
     },
-      complete: () => console.info('complete')
+      complete: () => console.info('History complete')
   });
   }
 

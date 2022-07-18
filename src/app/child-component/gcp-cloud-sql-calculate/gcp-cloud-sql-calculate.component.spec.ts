@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GcpComputeEngineComponent } from './gcp-compute-engine.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {GcpCloudSqlCalculateComponent} from "./gcp-cloud-sql-calculate.component";
 
-describe('ComputeEngineComponent', () => {
-  let component: GcpComputeEngineComponent;
-  let fixture: ComponentFixture<GcpComputeEngineComponent>;
+describe('GcpCloudSqlCalculateComponent', () => {
+  let component: GcpCloudSqlCalculateComponent;
+  let fixture: ComponentFixture<GcpCloudSqlCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule,ReactiveFormsModule, FormsModule,],
-      declarations: [ GcpComputeEngineComponent ]
+      imports : [HttpClientTestingModule, ReactiveFormsModule, FormsModule,],
+      declarations: [ GcpCloudSqlCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GcpComputeEngineComponent);
+    fixture = TestBed.createComponent(GcpCloudSqlCalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

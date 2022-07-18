@@ -1,22 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AzurePostgresqlComponent } from './azure-postgresql.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AzurePostgresqlCalculateComponent} from "./azure-postgresql-calculate.component";
 
 describe('AzurePostgresqlComponent', () => {
-  let component: AzurePostgresqlComponent;
-  let fixture: ComponentFixture<AzurePostgresqlComponent>;
+  let component: AzurePostgresqlCalculateComponent;
+  let fixture: ComponentFixture<AzurePostgresqlCalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports : [HttpClientTestingModule, ReactiveFormsModule, FormsModule,],
-      declarations: [ AzurePostgresqlComponent ]
+      declarations: [ AzurePostgresqlCalculateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AzurePostgresqlComponent);
+    fixture = TestBed.createComponent(AzurePostgresqlCalculateComponent);
     component = fixture.componentInstance;
+    component.information = { "core": 4, "ram": 4};
+
     fixture.detectChanges();
   });
 
